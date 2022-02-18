@@ -15,7 +15,6 @@ import java.sql.Connection;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.mono.stacksaga.common.BeanNames.MYSQL.Server.AGGREGATOR_SERVICE_IMPL;
 import static org.mono.stacksaga.common.BeanNames.Redis.Templates.STACK_SAGA_REDIS_TEMPLATE_STRING_STRING;
 import static org.mono.stacksaga.mysql.config.MysqlDatabaseConfiguration.getConnection;
 
@@ -32,16 +31,13 @@ public class StarterTestMysqlApplication implements CommandLineRunner {
     private RedisTemplate<String, String> redisTemplate;
 
 
-    @Autowired
-    @Qualifier(AGGREGATOR_SERVICE_IMPL)
-    private AggregatorService aggregatorService;
 
     @Override
     public void run(String... args) throws Exception {
-        Optional<AggregatorEntity> test = aggregatorService.getBy("test");
-        if (test.isPresent()) {
-            System.out.println("test = " + test);
-        }
+//        Optional<AggregatorEntity> test = aggregatorService.getBy("test");
+//        if (test.isPresent()) {
+//            System.out.println("test = " + test);
+//        }
 //        Connection connection = getConnection();
 
     }
