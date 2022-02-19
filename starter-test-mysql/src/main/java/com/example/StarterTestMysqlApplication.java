@@ -1,22 +1,14 @@
 package com.example;
 
 import org.mono.stacksaga.EnableStackSaga;
-import org.mono.stacksaga.db.entity.AggregatorEntity;
-import org.mono.stacksaga.db.service.AggregatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.sql.Connection;
-import java.util.Date;
-import java.util.Optional;
-
-import static org.mono.stacksaga.common.BeanNames.Redis.Templates.STACK_SAGA_REDIS_TEMPLATE_STRING_STRING;
-import static org.mono.stacksaga.mysql.config.MysqlDatabaseConfiguration.getConnection;
+import static org.mono.stacksaga.common.Resources.Redis.Templates.STACK_SAGA_REDIS_TEMPLATE_STRING_STRING;
 
 @SpringBootApplication
 @EnableStackSaga
