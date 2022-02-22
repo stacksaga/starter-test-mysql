@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import static org.mono.stacksaga.common.Resources.Redis.Templates.STACK_SAGA_REDIS_TEMPLATE_STRING_STRING;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+//        RedisAutoConfiguration.class
+})
 @EnableStackSaga
 public class StarterTestMysqlApplication implements CommandLineRunner {
 
