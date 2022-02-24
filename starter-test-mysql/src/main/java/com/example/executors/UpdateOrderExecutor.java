@@ -17,13 +17,15 @@ import org.mono.stacksaga.executor.SagaExecutor;
 import org.mono.stacksaga.executor.utils.ExecutorExecutedData;
 import org.mono.stacksaga.executor.utils.ProcessStack;
 import org.mono.stacksaga.executor.utils.ProcessStepManager;
-import org.mono.stacksaga.executor.utils.Wrapper;
+import org.mono.stacksaga.executor.utils.AggregatorContainer;
+
+import java.util.Map;
 
 @Executor(executeFor = MyMicroServices.ORDER_SERVICE)
 public class UpdateOrderExecutor implements CommandExecutor<OrderAggregator> {
 
     @Override
-    public ProcessStepManager<OrderAggregator> doProcess(ProcessStack<OrderAggregator> processStack, Wrapper<OrderAggregator> aggregate) throws NetworkException {
+    public ProcessStepManager<OrderAggregator> doProcess(ProcessStack<OrderAggregator> processStack, AggregatorContainer<OrderAggregator> aggregate) throws NetworkException {
         return null;
     }
 
