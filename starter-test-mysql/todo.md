@@ -13,3 +13,5 @@ above [https://dev.mysql.com/doc/refman/5.6/en/fractional-seconds.html]
 - add status into database. all thee instances details are saved only status will be changed
 - check the websocket maximum message size
 - close the redis database connection when the server is down.
+- add a validation to check some one has mention sub revert executor as
+  ZERO. [because zero is reserved for main revert execution]
