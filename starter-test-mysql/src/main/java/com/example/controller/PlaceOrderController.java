@@ -22,7 +22,7 @@ public class PlaceOrderController implements AggregatorEventListener<OrderAggreg
     @GetMapping("")
     public void placeOrder() {
 
-        System.out.println("orderAggregatorSagaTemplate.hashCode() = " + orderAggregatorSagaTemplate.hashCode());
+        /*System.out.println("orderAggregatorSagaTemplate.hashCode() = " + orderAggregatorSagaTemplate.hashCode());
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUsername("mafei");
         orderAggregator.setAmount(49999.0);
@@ -33,7 +33,7 @@ public class PlaceOrderController implements AggregatorEventListener<OrderAggreg
                 orderAggregator,
                 CheckUserExecutor.class,
                 objectMapper
-        );
+        );*/
     }
 
     @Override

@@ -8,20 +8,21 @@ import org.mono.stacksaga.SagaAggregate;
 import org.mono.stacksaga.core.annotation.Aggregator;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Aggregator(version = "1.0.3", versionUpdateNote = "just for fun")
 @Data
 @ToString
 public class OrderAggregator extends SagaAggregate {
-    private String username;
-    private Double amount;
-    private Tmp tmp;
+    private String updatedStatus;
+    private Date time;
+    private Type type;
 
-    @Data
-    @ToString
-    @NoArgsConstructor
-    public static class Tmp implements Serializable {
-        private String username;
+    public enum Type {
+        revert_complete,
+        process_complete,
+        revert_error,
     }
+
 }
