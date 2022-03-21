@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.Optional;
 
 @AllArgsConstructor
-@Executor(executeFor = MyMicroServices.USER_SERVICE)
+@Executor(executeFor = MyMicroServices.ORDER_SERVICE)
 public class CheckUserExecutor implements QueryExecutor<OrderAggregator> {
 
     private final UserRepository repository;
