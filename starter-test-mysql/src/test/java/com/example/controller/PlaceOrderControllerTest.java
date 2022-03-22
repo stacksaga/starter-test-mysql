@@ -1,12 +1,10 @@
 package com.example.controller;
 
 import com.example.aggregator.OrderAggregator;
-import com.example.executors.CheckUserExecutor;
 import com.example.executors.ReserveOrder;
 import com.example.ms.customerwalletservice.CustomerWalletService;
 import com.example.ms.customerwalletservice.entity.CustomerWalletEntity;
 import com.example.ms.orderservice.CustomerOrderService;
-import com.example.ms.orderservice.entity.CustomerOrderEntity;
 import com.example.ms.userservice.UserService;
 import com.example.ms.userservice.entity.UserEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,7 +14,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
-import org.mono.stacksaga.executor.utils.INIT_STEP;
 import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -77,8 +74,7 @@ class PlaceOrderControllerTest {
         orderAggregator.setType(OrderAggregator.Type.process_complete);
         TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
                 orderAggregator,
-                ReserveOrder.class,
-                objectMapper
+                ReserveOrder.class
         );
         Assertions.assertEquals(ProcessStatus.PROCESS_COMPLETED, response.getFinalProcessStatus());
     }
@@ -91,8 +87,7 @@ class PlaceOrderControllerTest {
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
         TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
                 orderAggregator,
-                ReserveOrder.class,
-                objectMapper
+                ReserveOrder.class
         );
         Assertions.assertEquals(ProcessStatus.REVERT_COMPLETED, response.getFinalProcessStatus());
     }
@@ -104,8 +99,7 @@ class PlaceOrderControllerTest {
         orderAggregator.setType(OrderAggregator.Type.revert_error);
         TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
                 orderAggregator,
-                ReserveOrder.class,
-                objectMapper
+                ReserveOrder.class
         );
         Assertions.assertEquals(ProcessStatus.REVERT_FAILED, response.getFinalProcessStatus());
     }

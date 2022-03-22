@@ -1,23 +1,38 @@
 package com.example.aggregator;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 import org.mono.stacksaga.SagaAggregate;
+import org.mono.stacksaga.core.AggregatorMapper;
+import org.mono.stacksaga.core.SagaAggregatorMapper;
 import org.mono.stacksaga.core.annotation.Aggregator;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
-@Aggregator(version = "1.0.3", versionUpdateNote = "just for fun")
 @Data
 @ToString
+@Slf4j
+@Aggregator(version = "1.0.3", mapper = OrderAggregator.Mapper.class, versionUpdateNote = "just for fun")
 public class OrderAggregator extends SagaAggregate {
     private String updatedStatus;
     private Date time;
     private Type type;
+
+
+    @AllArgsConstructor
+    @Component
+    public static class Mapper implements AggregatorMapper {
+
+        @Override
+        public SagaAggregatorMapper setSagaAggregatorMapper() {
+            log.debug("invoked SagaAggregatorMapper");
+            return SagaAggregatorMapper.Builder.build(new ObjectMapper());
+        }
+    }
 
     public enum Type {
         revert_complete,

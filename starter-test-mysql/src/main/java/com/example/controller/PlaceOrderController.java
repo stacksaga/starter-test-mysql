@@ -1,17 +1,16 @@
 package com.example.controller;
 
 import com.example.aggregator.OrderAggregator;
-import com.example.executors.CheckUserExecutor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
-import org.mono.stacksaga.core.lsitener.AggregatorEventListener;
+import org.mono.stacksaga.core.lsitener.AggregatorListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PlaceOrderController implements AggregatorEventListener<OrderAggregator> {
+public class PlaceOrderController implements AggregatorListener<OrderAggregator> {
 
     @Autowired
     private SagaTemplate<OrderAggregator> orderAggregatorSagaTemplate;

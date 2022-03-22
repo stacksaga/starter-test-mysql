@@ -3,7 +3,6 @@ package com.example.controller;
 
 import com.example.aggregator.OrderAggregator;
 import com.example.executors.ReserveOrder;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,8 +21,6 @@ class TransactionServiceImplTest {
     private TransactionService transactionService;
     @Autowired
     private SagaTemplate<OrderAggregator> orderAggregatorSagaTemplate;
-    @Autowired
-    private ObjectMapper objectMapper;
 
 
     @BeforeEach
@@ -39,8 +36,7 @@ class TransactionServiceImplTest {
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
         TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
                 orderAggregator,
-                ReserveOrder.class,
-                objectMapper
+                ReserveOrder.class
         );
 
         Optional<TransactionTranceResponse> transactionTrace = transactionService.getTransactionTrace(orderAggregator.getAggregateTransactionId());
