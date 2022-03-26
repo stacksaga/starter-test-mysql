@@ -62,7 +62,7 @@ class SagaRevertEngineInvokerTest {
                         response.getAggregate().getAggregateTransactionId());
         transactionRevertReasonRelatedServiceUid.ifPresent(relatedServiceEntity -> {
             if (circuitBreakerBroker.updateListerServiceAvailability(relatedServiceEntity.getService_name(), true)) {
-                sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name());
+                sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1);
             }
         });
 
