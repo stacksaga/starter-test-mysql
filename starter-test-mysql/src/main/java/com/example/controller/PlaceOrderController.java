@@ -1,16 +1,19 @@
 package com.example.controller;
 
 import com.example.aggregator.OrderAggregator;
+import com.example.executors.ReserveOrder;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
-import org.mono.stacksaga.core.lsitener.AggregatorListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PlaceOrderController implements AggregatorListener<OrderAggregator> {
+@Slf4j
+public class PlaceOrderController {
 
     @Autowired
     private SagaTemplate<OrderAggregator> orderAggregatorSagaTemplate;
@@ -18,26 +21,18 @@ public class PlaceOrderController implements AggregatorListener<OrderAggregator>
     @Autowired
     private ObjectMapper objectMapper;
 
-    @GetMapping("")
-    public void placeOrder() {
-
-        /*System.out.println("orderAggregatorSagaTemplate.hashCode() = " + orderAggregatorSagaTemplate.hashCode());
+    @GetMapping("/test")
+    public ResponseEntity<?> placeOrder() {
         OrderAggregator orderAggregator = new OrderAggregator();
-        orderAggregator.setUsername("mafei");
-        orderAggregator.setAmount(49999.0);
-        OrderAggregator.Tmp tmp = new OrderAggregator.Tmp();
-        tmp.setUsername("fuck");
-        orderAggregator.setTmp(tmp);
-        orderAggregatorSagaTemplate.doProcess(
+        orderAggregator.setUpdatedStatus("INIT_STEP>");
+        orderAggregator.setType(OrderAggregator.Type.revert_error);
+        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
                 orderAggregator,
-                CheckUserExecutor.class,
-                objectMapper
-        );*/
+                ReserveOrder.class
+        );
+        return ResponseEntity.ok().build();
     }
 
-    @Override
-    public void onTransactionSuccess(TransactionResponse<OrderAggregator> response) {
-        System.out.println("PlaceOrderController.onTransactionSuccess");
-    }
+
 }
 

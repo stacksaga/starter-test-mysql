@@ -94,6 +94,7 @@ class PlaceOrderControllerTest {
 
     @Test
     void placeOrderProcessRevertCompleteWithCommandRevert() {
+
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_error);
@@ -103,5 +104,6 @@ class PlaceOrderControllerTest {
         );
         Assertions.assertEquals(ProcessStatus.REVERT_FAILED, response.getFinalProcessStatus());
     }
+
 
 }
