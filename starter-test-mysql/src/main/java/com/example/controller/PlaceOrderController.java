@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.aggregator.OrderAggregator;
 import com.example.executors.ReserveOrder;
+import com.example.service.PlaceOrderService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.mono.stacksaga.SagaTemplate;
@@ -19,7 +20,7 @@ import java.util.Date;
 public class PlaceOrderController {
 
     @Autowired
-    private SagaTemplate<OrderAggregator> orderAggregatorSagaTemplate;
+    private PlaceOrderService placeOrderService;
 
 
     @GetMapping("/test")
@@ -29,25 +30,13 @@ public class PlaceOrderController {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.process_complete);
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
-                orderAggregator,
-                ReserveOrder.class
+        TransactionResponse<OrderAggregator> response = placeOrderService.placeOrder(
+                orderAggregator
         );
         stopWatch.stop();
         System.out.println("stopWatch " + stopWatch.getLastTaskInfo().getTimeMillis());
 
         return ResponseEntity.ok(response);
     }
-
-    @GetMapping("/test1")
-    public ResponseEntity<?> placeOrder1() {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
-        stopWatch.stop();
-        log.info("time {},[{}]",stopWatch.getLastTaskInfo().getTimeMillis(),new Date());
-        return ResponseEntity.ok().build();
-    }
-
-
 }
 
