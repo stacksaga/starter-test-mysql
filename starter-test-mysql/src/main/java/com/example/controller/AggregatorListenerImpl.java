@@ -21,7 +21,7 @@ public class AggregatorListenerImpl implements AggregatorListener<OrderAggregato
 
     @Override
     @AsyncListener
-    public void onTransactionSuccess(TransactionResponse<OrderAggregator> response) {
+    public void onTransactionRevertSuccess(TransactionResponse<OrderAggregator> response) {
         System.out.println("PlaceOrderController.onTransactionSuccess");
     }
 

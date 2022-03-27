@@ -18,6 +18,9 @@ import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.util.StopWatch;
+
+import java.util.Date;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class PlaceOrderControllerTest {
@@ -69,13 +72,20 @@ class PlaceOrderControllerTest {
 
     @Test
     void placeOrderProcessComplete() {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start("placeOrderProcessComplete");
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.process_complete);
+        orderAggregator.setTime(new Date());
         TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
                 orderAggregator,
                 ReserveOrder.class
         );
+        stopWatch.stop();
+        System.out.println("stopWatch " + stopWatch.getLastTaskInfo().getTimeMillis());
+        ;
+
         Assertions.assertEquals(ProcessStatus.PROCESS_COMPLETED, response.getFinalProcessStatus());
     }
 
