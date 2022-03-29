@@ -4,6 +4,8 @@ import com.example.aggregator.OrderAggregator;
 import com.example.executors.ReserveOrder;
 import com.example.ms.customerwalletservice.CustomerWalletService;
 import com.example.ms.userservice.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,6 +49,7 @@ class SagaRevertEngineInvokerTest {
     void tearDown() {
     }
 
+    @SneakyThrows
     @Test
     void invokeRevertEngine() throws InterruptedException {
         OrderAggregator orderAggregator = new OrderAggregator();
@@ -56,6 +59,7 @@ class SagaRevertEngineInvokerTest {
                 orderAggregator,
                 ReserveOrder.class
         );
+        System.out.println("Response : " + new ObjectMapper().writeValueAsString(response));
 
         Optional<RelatedServiceEntity> transactionRevertReasonRelatedServiceUid =
                 relatedServiceService.getTransactionRevertReasonRelatedServiceUid(
@@ -65,7 +69,6 @@ class SagaRevertEngineInvokerTest {
                 sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1);
             }
         });
-
         Thread.sleep(5000);
     }
 }

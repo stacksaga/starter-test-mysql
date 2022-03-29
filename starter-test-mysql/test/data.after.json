@@ -1,0 +1,2980 @@
+{
+   "endedTimeOut": 1648590079159,
+  "revertHintStore": {
+    "hints": {
+      "MakeThePaymentExecutor": 1648590079077,
+      "MakePaymentLogUpdate": 1648590079065
+    }
+  },
+  "transactionType": "OLD_ONE",
+  "currentAggregator": {
+    "aggregateTransactionId": "dcd3dbdc-4345-47ec-8777-fc62d43804ae",
+    "updatedStatus": "INIT_STEP>ReserveOrder>CheckUserExecutor>CheckAmountForPayment>MakeThePaymentExecutor>AddCustomerOrderExecutor>",
+    "time": 1648590079007,
+    "type": "revert_error"
+  },
+  "executedExecutorsOrder": {
+    "0": {
+      "executorType": "INIT",
+      "baseClassImpl": "org.mono.stacksaga.executor.utils.INIT_STEP",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078882,
+        "endTime": 1648590078882,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "343714a9-d386-4df4-bdeb-8a035a890e2d",
+          "transaction_execution_tryout_uid": "c5f53aeb-ebe6-4460-818a-675bd4817e86",
+          "transaction_process_execution_uid": "89836f6d-177b-4928-b066-93d6bd87765d"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "1": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.ReserveOrder",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078934,
+        "endTime": 1648590078952,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "200002d8-b625-4b17-94d0-5e8f05609da0",
+          "transaction_execution_tryout_uid": "0d5bf648-57a7-479e-9393-29b19f293a5e",
+          "transaction_process_execution_uid": "ad9ac925-6b6e-4559-8208-1fbd0b71cbd9"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "2": {
+      "executorType": "QUERY",
+      "baseClassImpl": "com.example.executors.CheckUserExecutor",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078965,
+        "endTime": 1648590078968,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "bdae15c4-3971-4c8d-844a-1deb9ea6e067",
+          "transaction_execution_tryout_uid": "b671983e-3019-46ce-898f-9f3693cc823d",
+          "transaction_process_execution_uid": "d9a8419d-34fb-45bb-bff2-a90144c0523f"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "3": {
+      "executorType": "QUERY",
+      "baseClassImpl": "com.example.executors.CheckAmountForPayment",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078982,
+        "endTime": 1648590078985,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "25f3d813-91d0-4e78-abf6-093435982b4c",
+          "transaction_execution_tryout_uid": "9beda405-315c-435a-9b1a-8a26f2cd247d",
+          "transaction_process_execution_uid": "1b3b134b-c99b-4039-a335-e318deb37390"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "4": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.MakeThePaymentExecutor",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078994,
+        "endTime": 1648590078997,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "cbc6e686-e902-4cf6-bf95-53bad44e9430",
+          "transaction_execution_tryout_uid": "2e1e4f70-5324-41b5-9c4a-42dcba8c58db",
+          "transaction_process_execution_uid": "060526b7-3597-4732-953f-426969f075ef"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": "9c21b1fe-58c2-49f8-a4e6-e89ae0cc6bf6",
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
+        "hint_store_uid": null,
+        "tmpInitialized": true,
+        "executionIsSuccess": null
+      },
+      "revertSubExecutionsBefore": {
+        "com.example.executors.sub.MakePaymentLogUpdate": {
+          "transaction_execution_uid": "305f2efa-c485-49b5-86d0-8221daea6342",
+          "transaction_execution_tryout_uid": "b3dcdde1-3ba3-420e-a70c-9eaba976a6ed",
+          "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
+          "transaction_revert_sub_execution_uid": "62c279c4-8ebc-4795-8335-6dfd0cae6e2f",
+          "hint_store_uid": null,
+          "status": "SUCCESS"
+        }
+      },
+      "revertSubExecutionsAfter": {}
+    },
+    "5": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.AddCustomerOrderExecutor",
+      "process": {
+        "doProcessExecutionStatus": "FAILED",
+        "startTime": 1648590079006,
+        "endTime": 1648590079009,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "6549105c-da0e-4a58-ac13-d80e84969108",
+          "transaction_execution_tryout_uid": "235fec24-fd64-463c-8a2b-4866e7bff0e3",
+          "transaction_process_execution_uid": "b73e3330-8ec9-4aa2-b2b6-abf4cb3d247a"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": "6d410af2-278c-4308-b6cf-b8c32520c368",
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": true
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    }
+  },
+  "executedExecutors": {
+    "com.example.executors.CheckAmountForPayment": {
+      "executorType": "QUERY",
+      "baseClassImpl": "com.example.executors.CheckAmountForPayment",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078982,
+        "endTime": 1648590078985,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "25f3d813-91d0-4e78-abf6-093435982b4c",
+          "transaction_execution_tryout_uid": "9beda405-315c-435a-9b1a-8a26f2cd247d",
+          "transaction_process_execution_uid": "1b3b134b-c99b-4039-a335-e318deb37390"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "com.example.executors.MakeThePaymentExecutor": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.MakeThePaymentExecutor",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078994,
+        "endTime": 1648590078997,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "cbc6e686-e902-4cf6-bf95-53bad44e9430",
+          "transaction_execution_tryout_uid": "2e1e4f70-5324-41b5-9c4a-42dcba8c58db",
+          "transaction_process_execution_uid": "060526b7-3597-4732-953f-426969f075ef"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": "9c21b1fe-58c2-49f8-a4e6-e89ae0cc6bf6",
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
+        "hint_store_uid": null,
+        "tmpInitialized": true,
+        "executionIsSuccess": null
+      },
+      "revertSubExecutionsBefore": {
+        "com.example.executors.sub.MakePaymentLogUpdate": {
+          "transaction_execution_uid": "305f2efa-c485-49b5-86d0-8221daea6342",
+          "transaction_execution_tryout_uid": "b3dcdde1-3ba3-420e-a70c-9eaba976a6ed",
+          "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
+          "transaction_revert_sub_execution_uid": "62c279c4-8ebc-4795-8335-6dfd0cae6e2f",
+          "hint_store_uid": null,
+          "status": "SUCCESS"
+        }
+      },
+      "revertSubExecutionsAfter": {}
+    },
+    "org.mono.stacksaga.executor.utils.INIT_STEP": {
+      "executorType": "INIT",
+      "baseClassImpl": "org.mono.stacksaga.executor.utils.INIT_STEP",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078882,
+        "endTime": 1648590078882,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "343714a9-d386-4df4-bdeb-8a035a890e2d",
+          "transaction_execution_tryout_uid": "c5f53aeb-ebe6-4460-818a-675bd4817e86",
+          "transaction_process_execution_uid": "89836f6d-177b-4928-b066-93d6bd87765d"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "com.example.executors.ReserveOrder": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.ReserveOrder",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078934,
+        "endTime": 1648590078952,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "200002d8-b625-4b17-94d0-5e8f05609da0",
+          "transaction_execution_tryout_uid": "0d5bf648-57a7-479e-9393-29b19f293a5e",
+          "transaction_process_execution_uid": "ad9ac925-6b6e-4559-8208-1fbd0b71cbd9"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "com.example.executors.AddCustomerOrderExecutor": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.AddCustomerOrderExecutor",
+      "process": {
+        "doProcessExecutionStatus": "FAILED",
+        "startTime": 1648590079006,
+        "endTime": 1648590079009,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "6549105c-da0e-4a58-ac13-d80e84969108",
+          "transaction_execution_tryout_uid": "235fec24-fd64-463c-8a2b-4866e7bff0e3",
+          "transaction_process_execution_uid": "b73e3330-8ec9-4aa2-b2b6-abf4cb3d247a"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": "6d410af2-278c-4308-b6cf-b8c32520c368",
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": true
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "com.example.executors.CheckUserExecutor": {
+      "executorType": "QUERY",
+      "baseClassImpl": "com.example.executors.CheckUserExecutor",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648590078965,
+        "endTime": 1648590078968,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "bdae15c4-3971-4c8d-844a-1deb9ea6e067",
+          "transaction_execution_tryout_uid": "b671983e-3019-46ce-898f-9f3693cc823d",
+          "transaction_process_execution_uid": "d9a8419d-34fb-45bb-bff2-a90144c0523f"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    }
+  },
+  "processException": {
+    "cause": {
+      "cause": null,
+      "stackTrace": [
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "AddCustomerOrderExecutor.java",
+          "lineNumber": 28,
+          "nativeMethod": false,
+          "className": "com.example.executors.AddCustomerOrderExecutor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "AddCustomerOrderExecutor.java",
+          "lineNumber": 15,
+          "nativeMethod": false,
+          "className": "com.example.executors.AddCustomerOrderExecutor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeCommandExecutor",
+          "fileName": "SagaTemplateEngine.java",
+          "lineNumber": 331,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcessInAction",
+          "fileName": "SagaTemplateEngine.java",
+          "lineNumber": 198,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "SagaTemplateEngine.java",
+          "lineNumber": 146,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "<generated>",
+          "lineNumber": -1,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$FastClassBySpringCGLIB$$8d2af834"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "MethodProxy.java",
+          "lineNumber": 218,
+          "nativeMethod": false,
+          "className": "org.springframework.cglib.proxy.MethodProxy"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeJoinpoint",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 783,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "ReflectiveMethodInvocation.java",
+          "lineNumber": 163,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.ReflectiveMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 753,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProceed",
+          "fileName": "DelegatingIntroductionInterceptor.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.support.DelegatingIntroductionInterceptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "DelegatingIntroductionInterceptor.java",
+          "lineNumber": 124,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.support.DelegatingIntroductionInterceptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "ReflectiveMethodInvocation.java",
+          "lineNumber": 186,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.ReflectiveMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 753,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "intercept",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 698,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "<generated>",
+          "lineNumber": -1,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$fce556cf"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeRevertEngine",
+          "fileName": "SagaRevertEngineInvokerTest.java",
+          "lineNumber": 58,
+          "nativeMethod": false,
+          "className": "com.example.controller.SagaRevertEngineInvokerTest"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke0",
+          "fileName": "NativeMethodAccessorImpl.java",
+          "lineNumber": -2,
+          "nativeMethod": true,
+          "className": "jdk.internal.reflect.NativeMethodAccessorImpl"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke",
+          "fileName": "NativeMethodAccessorImpl.java",
+          "lineNumber": 77,
+          "nativeMethod": false,
+          "className": "jdk.internal.reflect.NativeMethodAccessorImpl"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke",
+          "fileName": "DelegatingMethodAccessorImpl.java",
+          "lineNumber": 43,
+          "nativeMethod": false,
+          "className": "jdk.internal.reflect.DelegatingMethodAccessorImpl"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke",
+          "fileName": "Method.java",
+          "lineNumber": 568,
+          "nativeMethod": false,
+          "className": "java.lang.reflect.Method"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeMethod",
+          "fileName": "ReflectionUtils.java",
+          "lineNumber": 725,
+          "nativeMethod": false,
+          "className": "org.junit.platform.commons.util.ReflectionUtils"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "MethodInvocation.java",
+          "lineNumber": 60,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.MethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 131,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "intercept",
+          "fileName": "TimeoutExtension.java",
+          "lineNumber": 149,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "interceptTestableMethod",
+          "fileName": "TimeoutExtension.java",
+          "lineNumber": 140,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "interceptTestMethod",
+          "fileName": "TimeoutExtension.java",
+          "lineNumber": 84,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$ofVoidMethod$0",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 115,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$invoke$0",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 105,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 106,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 64,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "chainAndInvoke",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 45,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 37,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 104,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 98,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$invokeTestMethod$7",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 214,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeTestMethod",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 210,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 135,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 66,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$6",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 151,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$8",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 141,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "around",
+          "fileName": "Node.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.Node"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$9",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 139,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeRecursively",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 138,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 95,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "forEach",
+          "fileName": "ArrayList.java",
+          "lineNumber": 1511,
+          "nativeMethod": false,
+          "className": "java.util.ArrayList"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeAll",
+          "fileName": "SameThreadHierarchicalTestExecutorService.java",
+          "lineNumber": 41,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$6",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 155,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$8",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 141,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "around",
+          "fileName": "Node.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.Node"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$9",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 139,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeRecursively",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 138,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 95,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "forEach",
+          "fileName": "ArrayList.java",
+          "lineNumber": 1511,
+          "nativeMethod": false,
+          "className": "java.util.ArrayList"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeAll",
+          "fileName": "SameThreadHierarchicalTestExecutorService.java",
+          "lineNumber": 41,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$6",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 155,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$8",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 141,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "around",
+          "fileName": "Node.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.Node"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$9",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 139,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeRecursively",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 138,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 95,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "submit",
+          "fileName": "SameThreadHierarchicalTestExecutorService.java",
+          "lineNumber": 35,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "HierarchicalTestExecutor.java",
+          "lineNumber": 57,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "HierarchicalTestEngine.java",
+          "lineNumber": 54,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 107,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 88,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$execute$0",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 54,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "withInterceptedStreams",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 67,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 52,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "DefaultLauncher.java",
+          "lineNumber": 114,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.DefaultLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "DefaultLauncher.java",
+          "lineNumber": 86,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.DefaultLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "DefaultLauncherSession.java",
+          "lineNumber": 86,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "SessionPerRequestLauncher.java",
+          "lineNumber": 53,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.SessionPerRequestLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "startRunnerWithArgs",
+          "fileName": "JUnit5IdeaTestRunner.java",
+          "lineNumber": 71,
+          "nativeMethod": false,
+          "className": "com.intellij.junit5.JUnit5IdeaTestRunner"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "IdeaTestRunner.java",
+          "lineNumber": 38,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.IdeaTestRunner$Repeater$1"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "repeat",
+          "fileName": "TestsRepeater.java",
+          "lineNumber": 11,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.execution.junit.TestsRepeater"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "startRunnerWithArgs",
+          "fileName": "IdeaTestRunner.java",
+          "lineNumber": 35,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.IdeaTestRunner$Repeater"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "prepareStreamsAndStart",
+          "fileName": "JUnitStarter.java",
+          "lineNumber": 235,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.JUnitStarter"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "main",
+          "fileName": "JUnitStarter.java",
+          "lineNumber": 54,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.JUnitStarter"
+        }
+      ],
+      "message": "error from AddCustomerOrderExecutor",
+      "suppressed": [],
+      "localizedMessage": "error from AddCustomerOrderExecutor"
+    },
+    "stackTrace": [
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "buildProcessException",
+        "fileName": "ExecutorException.java",
+        "lineNumber": 38,
+        "nativeMethod": false,
+        "className": "org.mono.stacksaga.exception.execution.ExecutorException"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "doProcess",
+        "fileName": "AddCustomerOrderExecutor.java",
+        "lineNumber": 28,
+        "nativeMethod": false,
+        "className": "com.example.executors.AddCustomerOrderExecutor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "doProcess",
+        "fileName": "AddCustomerOrderExecutor.java",
+        "lineNumber": 15,
+        "nativeMethod": false,
+        "className": "com.example.executors.AddCustomerOrderExecutor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "executeCommandExecutor",
+        "fileName": "SagaTemplateEngine.java",
+        "lineNumber": 331,
+        "nativeMethod": false,
+        "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "doProcessInAction",
+        "fileName": "SagaTemplateEngine.java",
+        "lineNumber": 198,
+        "nativeMethod": false,
+        "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "doProcess",
+        "fileName": "SagaTemplateEngine.java",
+        "lineNumber": 146,
+        "nativeMethod": false,
+        "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invoke",
+        "fileName": "<generated>",
+        "lineNumber": -1,
+        "nativeMethod": false,
+        "className": "org.mono.stacksaga.core.SagaTemplateEngine$$FastClassBySpringCGLIB$$8d2af834"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invoke",
+        "fileName": "MethodProxy.java",
+        "lineNumber": 218,
+        "nativeMethod": false,
+        "className": "org.springframework.cglib.proxy.MethodProxy"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invokeJoinpoint",
+        "fileName": "CglibAopProxy.java",
+        "lineNumber": 783,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "ReflectiveMethodInvocation.java",
+        "lineNumber": 163,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.framework.ReflectiveMethodInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "CglibAopProxy.java",
+        "lineNumber": 753,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "doProceed",
+        "fileName": "DelegatingIntroductionInterceptor.java",
+        "lineNumber": 137,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.support.DelegatingIntroductionInterceptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invoke",
+        "fileName": "DelegatingIntroductionInterceptor.java",
+        "lineNumber": 124,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.support.DelegatingIntroductionInterceptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "ReflectiveMethodInvocation.java",
+        "lineNumber": 186,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.framework.ReflectiveMethodInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "CglibAopProxy.java",
+        "lineNumber": 753,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "intercept",
+        "fileName": "CglibAopProxy.java",
+        "lineNumber": 698,
+        "nativeMethod": false,
+        "className": "org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "doProcess",
+        "fileName": "<generated>",
+        "lineNumber": -1,
+        "nativeMethod": false,
+        "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$fce556cf"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invokeRevertEngine",
+        "fileName": "SagaRevertEngineInvokerTest.java",
+        "lineNumber": 58,
+        "nativeMethod": false,
+        "className": "com.example.controller.SagaRevertEngineInvokerTest"
+      },
+      {
+        "classLoaderName": null,
+        "moduleName": "java.base",
+        "moduleVersion": "17",
+        "methodName": "invoke0",
+        "fileName": "NativeMethodAccessorImpl.java",
+        "lineNumber": -2,
+        "nativeMethod": true,
+        "className": "jdk.internal.reflect.NativeMethodAccessorImpl"
+      },
+      {
+        "classLoaderName": null,
+        "moduleName": "java.base",
+        "moduleVersion": "17",
+        "methodName": "invoke",
+        "fileName": "NativeMethodAccessorImpl.java",
+        "lineNumber": 77,
+        "nativeMethod": false,
+        "className": "jdk.internal.reflect.NativeMethodAccessorImpl"
+      },
+      {
+        "classLoaderName": null,
+        "moduleName": "java.base",
+        "moduleVersion": "17",
+        "methodName": "invoke",
+        "fileName": "DelegatingMethodAccessorImpl.java",
+        "lineNumber": 43,
+        "nativeMethod": false,
+        "className": "jdk.internal.reflect.DelegatingMethodAccessorImpl"
+      },
+      {
+        "classLoaderName": null,
+        "moduleName": "java.base",
+        "moduleVersion": "17",
+        "methodName": "invoke",
+        "fileName": "Method.java",
+        "lineNumber": 568,
+        "nativeMethod": false,
+        "className": "java.lang.reflect.Method"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invokeMethod",
+        "fileName": "ReflectionUtils.java",
+        "lineNumber": 725,
+        "nativeMethod": false,
+        "className": "org.junit.platform.commons.util.ReflectionUtils"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "MethodInvocation.java",
+        "lineNumber": 60,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.MethodInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "InvocationInterceptorChain.java",
+        "lineNumber": 131,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "intercept",
+        "fileName": "TimeoutExtension.java",
+        "lineNumber": 149,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "interceptTestableMethod",
+        "fileName": "TimeoutExtension.java",
+        "lineNumber": 140,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "interceptTestMethod",
+        "fileName": "TimeoutExtension.java",
+        "lineNumber": 84,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$ofVoidMethod$0",
+        "fileName": "ExecutableInvoker.java",
+        "lineNumber": 115,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$invoke$0",
+        "fileName": "ExecutableInvoker.java",
+        "lineNumber": 105,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "InvocationInterceptorChain.java",
+        "lineNumber": 106,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "proceed",
+        "fileName": "InvocationInterceptorChain.java",
+        "lineNumber": 64,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "chainAndInvoke",
+        "fileName": "InvocationInterceptorChain.java",
+        "lineNumber": 45,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invoke",
+        "fileName": "InvocationInterceptorChain.java",
+        "lineNumber": 37,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invoke",
+        "fileName": "ExecutableInvoker.java",
+        "lineNumber": 104,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invoke",
+        "fileName": "ExecutableInvoker.java",
+        "lineNumber": 98,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$invokeTestMethod$7",
+        "fileName": "TestMethodTestDescriptor.java",
+        "lineNumber": 214,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invokeTestMethod",
+        "fileName": "TestMethodTestDescriptor.java",
+        "lineNumber": 210,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "TestMethodTestDescriptor.java",
+        "lineNumber": 135,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "TestMethodTestDescriptor.java",
+        "lineNumber": 66,
+        "nativeMethod": false,
+        "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$6",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 151,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$8",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 141,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "around",
+        "fileName": "Node.java",
+        "lineNumber": 137,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.Node"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$9",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 139,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "executeRecursively",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 138,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 95,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": null,
+        "moduleName": "java.base",
+        "moduleVersion": "17",
+        "methodName": "forEach",
+        "fileName": "ArrayList.java",
+        "lineNumber": 1511,
+        "nativeMethod": false,
+        "className": "java.util.ArrayList"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invokeAll",
+        "fileName": "SameThreadHierarchicalTestExecutorService.java",
+        "lineNumber": 41,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$6",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 155,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$8",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 141,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "around",
+        "fileName": "Node.java",
+        "lineNumber": 137,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.Node"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$9",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 139,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "executeRecursively",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 138,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 95,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": null,
+        "moduleName": "java.base",
+        "moduleVersion": "17",
+        "methodName": "forEach",
+        "fileName": "ArrayList.java",
+        "lineNumber": 1511,
+        "nativeMethod": false,
+        "className": "java.util.ArrayList"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "invokeAll",
+        "fileName": "SameThreadHierarchicalTestExecutorService.java",
+        "lineNumber": 41,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$6",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 155,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$8",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 141,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "around",
+        "fileName": "Node.java",
+        "lineNumber": 137,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.Node"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$executeRecursively$9",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 139,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "ThrowableCollector.java",
+        "lineNumber": 73,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "executeRecursively",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 138,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "NodeTestTask.java",
+        "lineNumber": 95,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "submit",
+        "fileName": "SameThreadHierarchicalTestExecutorService.java",
+        "lineNumber": 35,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "HierarchicalTestExecutor.java",
+        "lineNumber": 57,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "HierarchicalTestEngine.java",
+        "lineNumber": 54,
+        "nativeMethod": false,
+        "className": "org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "EngineExecutionOrchestrator.java",
+        "lineNumber": 107,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "EngineExecutionOrchestrator.java",
+        "lineNumber": 88,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "lambda$execute$0",
+        "fileName": "EngineExecutionOrchestrator.java",
+        "lineNumber": 54,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "withInterceptedStreams",
+        "fileName": "EngineExecutionOrchestrator.java",
+        "lineNumber": 67,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "EngineExecutionOrchestrator.java",
+        "lineNumber": 52,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "DefaultLauncher.java",
+        "lineNumber": 114,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.DefaultLauncher"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "DefaultLauncher.java",
+        "lineNumber": 86,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.DefaultLauncher"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "DefaultLauncherSession.java",
+        "lineNumber": 86,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "SessionPerRequestLauncher.java",
+        "lineNumber": 53,
+        "nativeMethod": false,
+        "className": "org.junit.platform.launcher.core.SessionPerRequestLauncher"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "startRunnerWithArgs",
+        "fileName": "JUnit5IdeaTestRunner.java",
+        "lineNumber": 71,
+        "nativeMethod": false,
+        "className": "com.intellij.junit5.JUnit5IdeaTestRunner"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "execute",
+        "fileName": "IdeaTestRunner.java",
+        "lineNumber": 38,
+        "nativeMethod": false,
+        "className": "com.intellij.rt.junit.IdeaTestRunner$Repeater$1"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "repeat",
+        "fileName": "TestsRepeater.java",
+        "lineNumber": 11,
+        "nativeMethod": false,
+        "className": "com.intellij.rt.execution.junit.TestsRepeater"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "startRunnerWithArgs",
+        "fileName": "IdeaTestRunner.java",
+        "lineNumber": 35,
+        "nativeMethod": false,
+        "className": "com.intellij.rt.junit.IdeaTestRunner$Repeater"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "prepareStreamsAndStart",
+        "fileName": "JUnitStarter.java",
+        "lineNumber": 235,
+        "nativeMethod": false,
+        "className": "com.intellij.rt.junit.JUnitStarter"
+      },
+      {
+        "classLoaderName": "app",
+        "moduleName": null,
+        "moduleVersion": null,
+        "methodName": "main",
+        "fileName": "JUnitStarter.java",
+        "lineNumber": 54,
+        "nativeMethod": false,
+        "className": "com.intellij.rt.junit.JUnitStarter"
+      }
+    ],
+    "processExceptionType": "PROCESS_EXCEPTION",
+    "exception": {
+      "cause": null,
+      "stackTrace": [
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "AddCustomerOrderExecutor.java",
+          "lineNumber": 28,
+          "nativeMethod": false,
+          "className": "com.example.executors.AddCustomerOrderExecutor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "AddCustomerOrderExecutor.java",
+          "lineNumber": 15,
+          "nativeMethod": false,
+          "className": "com.example.executors.AddCustomerOrderExecutor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeCommandExecutor",
+          "fileName": "SagaTemplateEngine.java",
+          "lineNumber": 331,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcessInAction",
+          "fileName": "SagaTemplateEngine.java",
+          "lineNumber": 198,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "SagaTemplateEngine.java",
+          "lineNumber": 146,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "<generated>",
+          "lineNumber": -1,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$FastClassBySpringCGLIB$$8d2af834"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "MethodProxy.java",
+          "lineNumber": 218,
+          "nativeMethod": false,
+          "className": "org.springframework.cglib.proxy.MethodProxy"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeJoinpoint",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 783,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "ReflectiveMethodInvocation.java",
+          "lineNumber": 163,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.ReflectiveMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 753,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProceed",
+          "fileName": "DelegatingIntroductionInterceptor.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.support.DelegatingIntroductionInterceptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "DelegatingIntroductionInterceptor.java",
+          "lineNumber": 124,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.support.DelegatingIntroductionInterceptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "ReflectiveMethodInvocation.java",
+          "lineNumber": 186,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.ReflectiveMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 753,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "intercept",
+          "fileName": "CglibAopProxy.java",
+          "lineNumber": 698,
+          "nativeMethod": false,
+          "className": "org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "doProcess",
+          "fileName": "<generated>",
+          "lineNumber": -1,
+          "nativeMethod": false,
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$fce556cf"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeRevertEngine",
+          "fileName": "SagaRevertEngineInvokerTest.java",
+          "lineNumber": 58,
+          "nativeMethod": false,
+          "className": "com.example.controller.SagaRevertEngineInvokerTest"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke0",
+          "fileName": "NativeMethodAccessorImpl.java",
+          "lineNumber": -2,
+          "nativeMethod": true,
+          "className": "jdk.internal.reflect.NativeMethodAccessorImpl"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke",
+          "fileName": "NativeMethodAccessorImpl.java",
+          "lineNumber": 77,
+          "nativeMethod": false,
+          "className": "jdk.internal.reflect.NativeMethodAccessorImpl"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke",
+          "fileName": "DelegatingMethodAccessorImpl.java",
+          "lineNumber": 43,
+          "nativeMethod": false,
+          "className": "jdk.internal.reflect.DelegatingMethodAccessorImpl"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "invoke",
+          "fileName": "Method.java",
+          "lineNumber": 568,
+          "nativeMethod": false,
+          "className": "java.lang.reflect.Method"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeMethod",
+          "fileName": "ReflectionUtils.java",
+          "lineNumber": 725,
+          "nativeMethod": false,
+          "className": "org.junit.platform.commons.util.ReflectionUtils"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "MethodInvocation.java",
+          "lineNumber": 60,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.MethodInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 131,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "intercept",
+          "fileName": "TimeoutExtension.java",
+          "lineNumber": 149,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "interceptTestableMethod",
+          "fileName": "TimeoutExtension.java",
+          "lineNumber": 140,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "interceptTestMethod",
+          "fileName": "TimeoutExtension.java",
+          "lineNumber": 84,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.extension.TimeoutExtension"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$ofVoidMethod$0",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 115,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$invoke$0",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 105,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 106,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "proceed",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 64,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "chainAndInvoke",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 45,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "InvocationInterceptorChain.java",
+          "lineNumber": 37,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.InvocationInterceptorChain"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 104,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invoke",
+          "fileName": "ExecutableInvoker.java",
+          "lineNumber": 98,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.execution.ExecutableInvoker"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$invokeTestMethod$7",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 214,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeTestMethod",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 210,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 135,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "TestMethodTestDescriptor.java",
+          "lineNumber": 66,
+          "nativeMethod": false,
+          "className": "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$6",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 151,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$8",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 141,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "around",
+          "fileName": "Node.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.Node"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$9",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 139,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeRecursively",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 138,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 95,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "forEach",
+          "fileName": "ArrayList.java",
+          "lineNumber": 1511,
+          "nativeMethod": false,
+          "className": "java.util.ArrayList"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeAll",
+          "fileName": "SameThreadHierarchicalTestExecutorService.java",
+          "lineNumber": 41,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$6",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 155,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$8",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 141,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "around",
+          "fileName": "Node.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.Node"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$9",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 139,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeRecursively",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 138,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 95,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "17",
+          "methodName": "forEach",
+          "fileName": "ArrayList.java",
+          "lineNumber": 1511,
+          "nativeMethod": false,
+          "className": "java.util.ArrayList"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "invokeAll",
+          "fileName": "SameThreadHierarchicalTestExecutorService.java",
+          "lineNumber": 41,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$6",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 155,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$8",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 141,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "around",
+          "fileName": "Node.java",
+          "lineNumber": 137,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.Node"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$executeRecursively$9",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 139,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "ThrowableCollector.java",
+          "lineNumber": 73,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.ThrowableCollector"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "executeRecursively",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 138,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "NodeTestTask.java",
+          "lineNumber": 95,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.NodeTestTask"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "submit",
+          "fileName": "SameThreadHierarchicalTestExecutorService.java",
+          "lineNumber": 35,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "HierarchicalTestExecutor.java",
+          "lineNumber": 57,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "HierarchicalTestEngine.java",
+          "lineNumber": 54,
+          "nativeMethod": false,
+          "className": "org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 107,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 88,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$execute$0",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 54,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "withInterceptedStreams",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 67,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "EngineExecutionOrchestrator.java",
+          "lineNumber": 52,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.EngineExecutionOrchestrator"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "DefaultLauncher.java",
+          "lineNumber": 114,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.DefaultLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "DefaultLauncher.java",
+          "lineNumber": 86,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.DefaultLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "DefaultLauncherSession.java",
+          "lineNumber": 86,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "SessionPerRequestLauncher.java",
+          "lineNumber": 53,
+          "nativeMethod": false,
+          "className": "org.junit.platform.launcher.core.SessionPerRequestLauncher"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "startRunnerWithArgs",
+          "fileName": "JUnit5IdeaTestRunner.java",
+          "lineNumber": 71,
+          "nativeMethod": false,
+          "className": "com.intellij.junit5.JUnit5IdeaTestRunner"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "execute",
+          "fileName": "IdeaTestRunner.java",
+          "lineNumber": 38,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.IdeaTestRunner$Repeater$1"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "repeat",
+          "fileName": "TestsRepeater.java",
+          "lineNumber": 11,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.execution.junit.TestsRepeater"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "startRunnerWithArgs",
+          "fileName": "IdeaTestRunner.java",
+          "lineNumber": 35,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.IdeaTestRunner$Repeater"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "prepareStreamsAndStart",
+          "fileName": "JUnitStarter.java",
+          "lineNumber": 235,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.JUnitStarter"
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "main",
+          "fileName": "JUnitStarter.java",
+          "lineNumber": 54,
+          "nativeMethod": false,
+          "className": "com.intellij.rt.junit.JUnitStarter"
+        }
+      ],
+      "message": "error from AddCustomerOrderExecutor",
+      "suppressed": [],
+      "localizedMessage": "error from AddCustomerOrderExecutor"
+    },
+    "errorFrom": "com.example.executors.AddCustomerOrderExecutor",
+    "message": "error from AddCustomerOrderExecutor",
+    "suppressed": [],
+    "localizedMessage": "error from AddCustomerOrderExecutor"
+  },
+  "flatOrder": 7,
+  "revertedExecutors": null,
+  "revertedExecutorsOrder": null
+}
