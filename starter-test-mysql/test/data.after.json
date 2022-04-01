@@ -1,16 +1,16 @@
 {
-   "endedTimeOut": 1648590079159,
+  "endedTimeOut": 1648756363855,
   "revertHintStore": {
     "hints": {
-      "MakeThePaymentExecutor": 1648590079077,
-      "MakePaymentLogUpdate": 1648590079065
+      "MakeThePaymentExecutor": 1648756363784,
+      "MakePaymentLogUpdate": 1648756363772
     }
   },
   "transactionType": "OLD_ONE",
   "currentAggregator": {
-    "aggregateTransactionId": "dcd3dbdc-4345-47ec-8777-fc62d43804ae",
+    "aggregateTransactionId": "b9226807-6f68-4c61-abda-7a1d923ca7fc",
     "updatedStatus": "INIT_STEP>ReserveOrder>CheckUserExecutor>CheckAmountForPayment>MakeThePaymentExecutor>AddCustomerOrderExecutor>",
-    "time": 1648590079007,
+    "time": 1648756363726,
     "type": "revert_error"
   },
   "executedExecutorsOrder": {
@@ -19,12 +19,12 @@
       "baseClassImpl": "org.mono.stacksaga.executor.utils.INIT_STEP",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078882,
-        "endTime": 1648590078882,
+        "startTime": 1648756363626,
+        "endTime": 1648756363626,
         "processExecutionDetail": {
-          "transaction_execution_uid": "343714a9-d386-4df4-bdeb-8a035a890e2d",
-          "transaction_execution_tryout_uid": "c5f53aeb-ebe6-4460-818a-675bd4817e86",
-          "transaction_process_execution_uid": "89836f6d-177b-4928-b066-93d6bd87765d"
+          "transaction_execution_uid": "f2827c31-ccb8-4b7d-815a-6cc43ae59dde",
+          "transaction_execution_tryout_uid": "a8300800-3538-4af7-b53e-28dabe485044",
+          "transaction_process_execution_uid": "54c599d7-01d8-41c3-b12d-5a45c8a8dcb0"
         }
       },
       "revertsOrder": {},
@@ -46,12 +46,12 @@
       "baseClassImpl": "com.example.executors.ReserveOrder",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078934,
-        "endTime": 1648590078952,
+        "startTime": 1648756363675,
+        "endTime": 1648756363686,
         "processExecutionDetail": {
-          "transaction_execution_uid": "200002d8-b625-4b17-94d0-5e8f05609da0",
-          "transaction_execution_tryout_uid": "0d5bf648-57a7-479e-9393-29b19f293a5e",
-          "transaction_process_execution_uid": "ad9ac925-6b6e-4559-8208-1fbd0b71cbd9"
+          "transaction_execution_uid": "a9eb3211-6f51-46ab-b27a-ec42229dcdc9",
+          "transaction_execution_tryout_uid": "10fcea80-75d0-4fb3-928e-15951d1746e2",
+          "transaction_process_execution_uid": "4e0cdc2d-582b-4105-ad9f-d8d736344330"
         }
       },
       "revertsOrder": {},
@@ -73,12 +73,12 @@
       "baseClassImpl": "com.example.executors.CheckUserExecutor",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078965,
-        "endTime": 1648590078968,
+        "startTime": 1648756363696,
+        "endTime": 1648756363699,
         "processExecutionDetail": {
-          "transaction_execution_uid": "bdae15c4-3971-4c8d-844a-1deb9ea6e067",
-          "transaction_execution_tryout_uid": "b671983e-3019-46ce-898f-9f3693cc823d",
-          "transaction_process_execution_uid": "d9a8419d-34fb-45bb-bff2-a90144c0523f"
+          "transaction_execution_uid": "a80e8753-71a2-48df-9877-86781dd39d1a",
+          "transaction_execution_tryout_uid": "5ced1288-b2cc-4c31-93ae-c4dd584fc34b",
+          "transaction_process_execution_uid": "b8b4e771-ffda-4d51-b72b-b5b580eca572"
         }
       },
       "revertsOrder": {},
@@ -100,12 +100,12 @@
       "baseClassImpl": "com.example.executors.CheckAmountForPayment",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078982,
-        "endTime": 1648590078985,
+        "startTime": 1648756363708,
+        "endTime": 1648756363710,
         "processExecutionDetail": {
-          "transaction_execution_uid": "25f3d813-91d0-4e78-abf6-093435982b4c",
-          "transaction_execution_tryout_uid": "9beda405-315c-435a-9b1a-8a26f2cd247d",
-          "transaction_process_execution_uid": "1b3b134b-c99b-4039-a335-e318deb37390"
+          "transaction_execution_uid": "1c95ba0b-af5d-49c3-aa93-5c6943dd064d",
+          "transaction_execution_tryout_uid": "1621d629-853b-4363-ac09-3c81557a501f",
+          "transaction_process_execution_uid": "e5eda9ab-852f-43d5-a149-b2f331a86d3c"
         }
       },
       "revertsOrder": {},
@@ -127,31 +127,31 @@
       "baseClassImpl": "com.example.executors.MakeThePaymentExecutor",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078994,
-        "endTime": 1648590078997,
+        "startTime": 1648756363717,
+        "endTime": 1648756363719,
         "processExecutionDetail": {
-          "transaction_execution_uid": "cbc6e686-e902-4cf6-bf95-53bad44e9430",
-          "transaction_execution_tryout_uid": "2e1e4f70-5324-41b5-9c4a-42dcba8c58db",
-          "transaction_process_execution_uid": "060526b7-3597-4732-953f-426969f075ef"
+          "transaction_execution_uid": "2d8158e6-79ca-4658-ae07-75403e43bdec",
+          "transaction_execution_tryout_uid": "ffae9466-9fa1-42bf-b26b-38ff9e89fd9f",
+          "transaction_process_execution_uid": "4f34abff-b640-46b2-8b0b-cec26e8033ae"
         }
       },
       "revertsOrder": {},
       "reverts": {},
       "revertHintStore": null,
       "revertMainExecutionDetail": {
-        "transaction_execution_uid": "9c21b1fe-58c2-49f8-a4e6-e89ae0cc6bf6",
-        "transaction_execution_tryout_uid": null,
-        "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
-        "hint_store_uid": null,
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": "36e3ffba-a477-4dcd-9f21-0949996f1df0",
+        "transaction_revert_execution_uid": "4230d707-d86a-4720-93e4-8e8afdde738f",
+        "hint_store_uid": "2710e41f-9917-4876-b2d4-2f209add5ee6",
         "tmpInitialized": true,
-        "executionIsSuccess": null
+        "executionIsSuccess": false
       },
       "revertSubExecutionsBefore": {
         "com.example.executors.sub.MakePaymentLogUpdate": {
-          "transaction_execution_uid": "305f2efa-c485-49b5-86d0-8221daea6342",
-          "transaction_execution_tryout_uid": "b3dcdde1-3ba3-420e-a70c-9eaba976a6ed",
-          "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
-          "transaction_revert_sub_execution_uid": "62c279c4-8ebc-4795-8335-6dfd0cae6e2f",
+          "transaction_execution_uid": "e916d02c-9d0a-4a09-9670-88b3969415d5",
+          "transaction_execution_tryout_uid": "847ed7f2-b9ba-4388-bff2-d5e7ed9a4b45",
+          "transaction_revert_execution_uid": "4230d707-d86a-4720-93e4-8e8afdde738f",
+          "transaction_revert_sub_execution_uid": "eaf2b163-9331-4c09-8c16-3f7be34b7543",
           "hint_store_uid": null,
           "status": "SUCCESS"
         }
@@ -163,12 +163,12 @@
       "baseClassImpl": "com.example.executors.AddCustomerOrderExecutor",
       "process": {
         "doProcessExecutionStatus": "FAILED",
-        "startTime": 1648590079006,
-        "endTime": 1648590079009,
+        "startTime": 1648756363724,
+        "endTime": 1648756363727,
         "processExecutionDetail": {
-          "transaction_execution_uid": "6549105c-da0e-4a58-ac13-d80e84969108",
-          "transaction_execution_tryout_uid": "235fec24-fd64-463c-8a2b-4866e7bff0e3",
-          "transaction_process_execution_uid": "b73e3330-8ec9-4aa2-b2b6-abf4cb3d247a"
+          "transaction_execution_uid": "2ceb9eaf-cd8f-4c15-9e1e-66f77de884e5",
+          "transaction_execution_tryout_uid": "0dbd5820-b2ca-42d2-82f0-b10a1547e35a",
+          "transaction_process_execution_uid": "15775570-41d0-41c2-a414-15f553a9e37c"
         }
       },
       "revertsOrder": {},
@@ -176,10 +176,10 @@
       "revertHintStore": null,
       "revertMainExecutionDetail": {
         "transaction_execution_uid": null,
-        "transaction_execution_tryout_uid": "6d410af2-278c-4308-b6cf-b8c32520c368",
+        "transaction_execution_tryout_uid": "42c2b748-118f-4fb6-9a39-444a742d061a",
         "transaction_revert_execution_uid": null,
         "hint_store_uid": null,
-        "tmpInitialized": false,
+        "tmpInitialized": true,
         "executionIsSuccess": true
       },
       "revertSubExecutionsBefore": {},
@@ -187,17 +187,53 @@
     }
   },
   "executedExecutors": {
+    "com.example.executors.MakeThePaymentExecutor": {
+      "executorType": "COMMAND",
+      "baseClassImpl": "com.example.executors.MakeThePaymentExecutor",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648756363717,
+        "endTime": 1648756363719,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "2d8158e6-79ca-4658-ae07-75403e43bdec",
+          "transaction_execution_tryout_uid": "ffae9466-9fa1-42bf-b26b-38ff9e89fd9f",
+          "transaction_process_execution_uid": "4f34abff-b640-46b2-8b0b-cec26e8033ae"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": "36e3ffba-a477-4dcd-9f21-0949996f1df0",
+        "transaction_revert_execution_uid": "4230d707-d86a-4720-93e4-8e8afdde738f",
+        "hint_store_uid": "2710e41f-9917-4876-b2d4-2f209add5ee6",
+        "tmpInitialized": true,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {
+        "com.example.executors.sub.MakePaymentLogUpdate": {
+          "transaction_execution_uid": "e916d02c-9d0a-4a09-9670-88b3969415d5",
+          "transaction_execution_tryout_uid": "847ed7f2-b9ba-4388-bff2-d5e7ed9a4b45",
+          "transaction_revert_execution_uid": "4230d707-d86a-4720-93e4-8e8afdde738f",
+          "transaction_revert_sub_execution_uid": "eaf2b163-9331-4c09-8c16-3f7be34b7543",
+          "hint_store_uid": null,
+          "status": "SUCCESS"
+        }
+      },
+      "revertSubExecutionsAfter": {}
+    },
     "com.example.executors.CheckAmountForPayment": {
       "executorType": "QUERY",
       "baseClassImpl": "com.example.executors.CheckAmountForPayment",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078982,
-        "endTime": 1648590078985,
+        "startTime": 1648756363708,
+        "endTime": 1648756363710,
         "processExecutionDetail": {
-          "transaction_execution_uid": "25f3d813-91d0-4e78-abf6-093435982b4c",
-          "transaction_execution_tryout_uid": "9beda405-315c-435a-9b1a-8a26f2cd247d",
-          "transaction_process_execution_uid": "1b3b134b-c99b-4039-a335-e318deb37390"
+          "transaction_execution_uid": "1c95ba0b-af5d-49c3-aa93-5c6943dd064d",
+          "transaction_execution_tryout_uid": "1621d629-853b-4363-ac09-3c81557a501f",
+          "transaction_process_execution_uid": "e5eda9ab-852f-43d5-a149-b2f331a86d3c"
         }
       },
       "revertsOrder": {},
@@ -214,53 +250,17 @@
       "revertSubExecutionsBefore": {},
       "revertSubExecutionsAfter": {}
     },
-    "com.example.executors.MakeThePaymentExecutor": {
-      "executorType": "COMMAND",
-      "baseClassImpl": "com.example.executors.MakeThePaymentExecutor",
+    "com.example.executors.CheckUserExecutor": {
+      "executorType": "QUERY",
+      "baseClassImpl": "com.example.executors.CheckUserExecutor",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078994,
-        "endTime": 1648590078997,
+        "startTime": 1648756363696,
+        "endTime": 1648756363699,
         "processExecutionDetail": {
-          "transaction_execution_uid": "cbc6e686-e902-4cf6-bf95-53bad44e9430",
-          "transaction_execution_tryout_uid": "2e1e4f70-5324-41b5-9c4a-42dcba8c58db",
-          "transaction_process_execution_uid": "060526b7-3597-4732-953f-426969f075ef"
-        }
-      },
-      "revertsOrder": {},
-      "reverts": {},
-      "revertHintStore": null,
-      "revertMainExecutionDetail": {
-        "transaction_execution_uid": "9c21b1fe-58c2-49f8-a4e6-e89ae0cc6bf6",
-        "transaction_execution_tryout_uid": null,
-        "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
-        "hint_store_uid": null,
-        "tmpInitialized": true,
-        "executionIsSuccess": null
-      },
-      "revertSubExecutionsBefore": {
-        "com.example.executors.sub.MakePaymentLogUpdate": {
-          "transaction_execution_uid": "305f2efa-c485-49b5-86d0-8221daea6342",
-          "transaction_execution_tryout_uid": "b3dcdde1-3ba3-420e-a70c-9eaba976a6ed",
-          "transaction_revert_execution_uid": "2b508961-25a6-4692-831d-3f3bb81c1c5e",
-          "transaction_revert_sub_execution_uid": "62c279c4-8ebc-4795-8335-6dfd0cae6e2f",
-          "hint_store_uid": null,
-          "status": "SUCCESS"
-        }
-      },
-      "revertSubExecutionsAfter": {}
-    },
-    "org.mono.stacksaga.executor.utils.INIT_STEP": {
-      "executorType": "INIT",
-      "baseClassImpl": "org.mono.stacksaga.executor.utils.INIT_STEP",
-      "process": {
-        "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078882,
-        "endTime": 1648590078882,
-        "processExecutionDetail": {
-          "transaction_execution_uid": "343714a9-d386-4df4-bdeb-8a035a890e2d",
-          "transaction_execution_tryout_uid": "c5f53aeb-ebe6-4460-818a-675bd4817e86",
-          "transaction_process_execution_uid": "89836f6d-177b-4928-b066-93d6bd87765d"
+          "transaction_execution_uid": "a80e8753-71a2-48df-9877-86781dd39d1a",
+          "transaction_execution_tryout_uid": "5ced1288-b2cc-4c31-93ae-c4dd584fc34b",
+          "transaction_process_execution_uid": "b8b4e771-ffda-4d51-b72b-b5b580eca572"
         }
       },
       "revertsOrder": {},
@@ -282,12 +282,39 @@
       "baseClassImpl": "com.example.executors.ReserveOrder",
       "process": {
         "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078934,
-        "endTime": 1648590078952,
+        "startTime": 1648756363675,
+        "endTime": 1648756363686,
         "processExecutionDetail": {
-          "transaction_execution_uid": "200002d8-b625-4b17-94d0-5e8f05609da0",
-          "transaction_execution_tryout_uid": "0d5bf648-57a7-479e-9393-29b19f293a5e",
-          "transaction_process_execution_uid": "ad9ac925-6b6e-4559-8208-1fbd0b71cbd9"
+          "transaction_execution_uid": "a9eb3211-6f51-46ab-b27a-ec42229dcdc9",
+          "transaction_execution_tryout_uid": "10fcea80-75d0-4fb3-928e-15951d1746e2",
+          "transaction_process_execution_uid": "4e0cdc2d-582b-4105-ad9f-d8d736344330"
+        }
+      },
+      "revertsOrder": {},
+      "reverts": {},
+      "revertHintStore": null,
+      "revertMainExecutionDetail": {
+        "transaction_execution_uid": null,
+        "transaction_execution_tryout_uid": null,
+        "transaction_revert_execution_uid": null,
+        "hint_store_uid": null,
+        "tmpInitialized": false,
+        "executionIsSuccess": false
+      },
+      "revertSubExecutionsBefore": {},
+      "revertSubExecutionsAfter": {}
+    },
+    "org.mono.stacksaga.executor.utils.INIT_STEP": {
+      "executorType": "INIT",
+      "baseClassImpl": "org.mono.stacksaga.executor.utils.INIT_STEP",
+      "process": {
+        "doProcessExecutionStatus": "PASSED",
+        "startTime": 1648756363626,
+        "endTime": 1648756363626,
+        "processExecutionDetail": {
+          "transaction_execution_uid": "f2827c31-ccb8-4b7d-815a-6cc43ae59dde",
+          "transaction_execution_tryout_uid": "a8300800-3538-4af7-b53e-28dabe485044",
+          "transaction_process_execution_uid": "54c599d7-01d8-41c3-b12d-5a45c8a8dcb0"
         }
       },
       "revertsOrder": {},
@@ -309,12 +336,12 @@
       "baseClassImpl": "com.example.executors.AddCustomerOrderExecutor",
       "process": {
         "doProcessExecutionStatus": "FAILED",
-        "startTime": 1648590079006,
-        "endTime": 1648590079009,
+        "startTime": 1648756363724,
+        "endTime": 1648756363727,
         "processExecutionDetail": {
-          "transaction_execution_uid": "6549105c-da0e-4a58-ac13-d80e84969108",
-          "transaction_execution_tryout_uid": "235fec24-fd64-463c-8a2b-4866e7bff0e3",
-          "transaction_process_execution_uid": "b73e3330-8ec9-4aa2-b2b6-abf4cb3d247a"
+          "transaction_execution_uid": "2ceb9eaf-cd8f-4c15-9e1e-66f77de884e5",
+          "transaction_execution_tryout_uid": "0dbd5820-b2ca-42d2-82f0-b10a1547e35a",
+          "transaction_process_execution_uid": "15775570-41d0-41c2-a414-15f553a9e37c"
         }
       },
       "revertsOrder": {},
@@ -322,38 +349,11 @@
       "revertHintStore": null,
       "revertMainExecutionDetail": {
         "transaction_execution_uid": null,
-        "transaction_execution_tryout_uid": "6d410af2-278c-4308-b6cf-b8c32520c368",
+        "transaction_execution_tryout_uid": "42c2b748-118f-4fb6-9a39-444a742d061a",
         "transaction_revert_execution_uid": null,
         "hint_store_uid": null,
-        "tmpInitialized": false,
+        "tmpInitialized": true,
         "executionIsSuccess": true
-      },
-      "revertSubExecutionsBefore": {},
-      "revertSubExecutionsAfter": {}
-    },
-    "com.example.executors.CheckUserExecutor": {
-      "executorType": "QUERY",
-      "baseClassImpl": "com.example.executors.CheckUserExecutor",
-      "process": {
-        "doProcessExecutionStatus": "PASSED",
-        "startTime": 1648590078965,
-        "endTime": 1648590078968,
-        "processExecutionDetail": {
-          "transaction_execution_uid": "bdae15c4-3971-4c8d-844a-1deb9ea6e067",
-          "transaction_execution_tryout_uid": "b671983e-3019-46ce-898f-9f3693cc823d",
-          "transaction_process_execution_uid": "d9a8419d-34fb-45bb-bff2-a90144c0523f"
-        }
-      },
-      "revertsOrder": {},
-      "reverts": {},
-      "revertHintStore": null,
-      "revertMainExecutionDetail": {
-        "transaction_execution_uid": null,
-        "transaction_execution_tryout_uid": null,
-        "transaction_revert_execution_uid": null,
-        "hint_store_uid": null,
-        "tmpInitialized": false,
-        "executionIsSuccess": false
       },
       "revertSubExecutionsBefore": {},
       "revertSubExecutionsAfter": {}
@@ -521,7 +521,7 @@
           "fileName": "<generated>",
           "lineNumber": -1,
           "nativeMethod": false,
-          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$fce556cf"
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$4b2e27f6"
         },
         {
           "classLoaderName": "app",
@@ -1397,7 +1397,7 @@
         "fileName": "<generated>",
         "lineNumber": -1,
         "nativeMethod": false,
-        "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$fce556cf"
+        "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$4b2e27f6"
       },
       {
         "classLoaderName": "app",
@@ -2262,7 +2262,7 @@
           "fileName": "<generated>",
           "lineNumber": -1,
           "nativeMethod": false,
-          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$fce556cf"
+          "className": "org.mono.stacksaga.core.SagaTemplateEngine$$EnhancerBySpringCGLIB$$4b2e27f6"
         },
         {
           "classLoaderName": "app",

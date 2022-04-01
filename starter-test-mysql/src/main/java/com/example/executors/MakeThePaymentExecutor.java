@@ -36,6 +36,7 @@ public class MakeThePaymentExecutor implements CommandExecutor<OrderAggregator> 
     })
     public void doRevert(ProcessStack<OrderAggregator> previousProcessStack, ExecutorException executorException, OrderAggregator currentAggregate, RevertHintStore revertHintStore) throws IOException {
         System.out.println("MakeThePaymentExecutor.doRevert");
+        executorException.printStackTrace();
         revertHintStore.put("MakeThePaymentExecutor", new Date());
         if (currentAggregate.getType().equals(OrderAggregator.Type.revert_error)) {
             throw new IOException("revert error from MakeThePaymentExecutor");

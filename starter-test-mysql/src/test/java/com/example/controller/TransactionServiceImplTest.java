@@ -32,6 +32,25 @@ class TransactionServiceImplTest {
 
 
     @Test
+    void getTransactionTraceTestRevertComplete() {
+        OrderAggregator orderAggregator = new OrderAggregator();
+        orderAggregator.setUpdatedStatus("INIT_STEP>");
+        orderAggregator.setType(OrderAggregator.Type.revert_complete);
+        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+                orderAggregator,
+                ReserveOrder.class
+        );
+
+        Optional<TransactionTranceResponse> transactionTrace = transactionService.getTransactionTrace(orderAggregator.getAggregateTransactionId());
+        if (!transactionTrace.isPresent()) {
+
+            Assertions.fail();
+        } else {
+            transactionTrace.get().getExecutorOrderAsDetailsMap().forEach(System.out::println);
+        }
+    }
+
+    @Test
     void getTransactionTraceTest() {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
@@ -49,5 +68,7 @@ class TransactionServiceImplTest {
             transactionTrace.get().getExecutorOrderAsDetailsMap().forEach(System.out::println);
         }
     }
+
+
 
 }
