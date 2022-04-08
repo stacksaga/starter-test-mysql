@@ -4,7 +4,9 @@ import com.example.aggregator.OrderAggregator;
 import com.example.executors.ReserveOrder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mono.stacksaga.SagaTemplate;
@@ -13,6 +15,7 @@ import org.mono.stacksaga.cb.CircuitBreakerBroker;
 import org.mono.stacksaga.core.SagaRevertEngineInvoker;
 import org.mono.stacksaga.db.entity.RelatedServiceEntity;
 import org.mono.stacksaga.db.service.RelatedServiceService;
+import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -42,6 +45,21 @@ class SagaRevertEngineInvokerTest {
     @AfterEach
     void tearDown() {
     }
+
+    @SneakyThrows
+    @Test
+    void executeTransactionWithRevertError() throws InterruptedException {
+        OrderAggregator orderAggregator = new OrderAggregator();
+        orderAggregator.setUpdatedStatus("INIT_STEP>");
+        orderAggregator.setType(OrderAggregator.Type.revert_error);
+        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+                orderAggregator,
+                ReserveOrder.class
+        );
+        System.out.println("Response : " + new ObjectMapper().writeValueAsString(response));
+        Assertions.assertEquals(ProcessStatus.REVERT_FAILED, response.getFinalProcessStatus());
+    }
+
 
     @SneakyThrows
     @Test

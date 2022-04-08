@@ -25,8 +25,8 @@ public class ReserveOrder implements CommandExecutor<OrderAggregator> {
 
     @Override
     public void doRevert(ProcessStack<OrderAggregator> previousProcessStack, ExecutorException executorException, OrderAggregator currentAggregate, RevertHintStore revertHintStore) throws IOException {
-        executorException.printStackTrace();
         if (currentAggregate.getType().equals(OrderAggregator.Type.revert_error)) {
+            executorException.printStackTrace();
             throw new IOException("Network exception from ReserveOrder");
         }
     }
