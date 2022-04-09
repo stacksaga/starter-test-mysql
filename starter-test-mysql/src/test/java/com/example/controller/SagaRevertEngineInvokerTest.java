@@ -122,9 +122,20 @@ class SagaRevertEngineInvokerTest {
 
     @SneakyThrows
     @Test
-    void invokeRevertEngineWithoutTransaction() throws InterruptedException {
+    void invokeRevertEngineWithoutTransactionWalletService() throws InterruptedException {
 
         String relatedService = "wallet-service";
+        if (circuitBreakerBroker.updateListerServiceAvailability(relatedService, true)) {
+            sagaRevertEngineInvoker.invokeRevertEngine(relatedService, 1);
+        }
+        Thread.sleep(5000);
+    }
+
+    @SneakyThrows
+    @Test
+    void invokeRevertEngineWithoutTransactionStockService() throws InterruptedException {
+
+        String relatedService = "stock-service";
         if (circuitBreakerBroker.updateListerServiceAvailability(relatedService, true)) {
             sagaRevertEngineInvoker.invokeRevertEngine(relatedService, 1);
         }
