@@ -14,13 +14,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
+import org.mono.stacksaga.exception.EventStoreConnectionException;
+import org.mono.stacksaga.exception.execution.RevertException;
 import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.util.StopWatch;
 
-import java.util.Date;
+import java.util.Objects;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class PlaceOrderControllerTest {
@@ -71,35 +72,22 @@ class PlaceOrderControllerTest {
 
 
     @Test
-    void placeOrderProcessComplete() {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start("placeOrderProcessComplete");
-        OrderAggregator orderAggregator = new OrderAggregator();
-        orderAggregator.setUpdatedStatus("INIT_STEP>");
-        orderAggregator.setType(OrderAggregator.Type.process_complete);
-        orderAggregator.setTime(new Date());
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
-                orderAggregator,
-                ReserveOrder.class
-        );
-        stopWatch.stop();
-        System.out.println("stopWatch " + stopWatch.getLastTaskInfo().getTimeMillis());
-        ;
-
-        Assertions.assertEquals(ProcessStatus.PROCESS_COMPLETED, response.getFinalProcessStatus());
-    }
-
-
-    @Test
     void placeOrderProcessRevertCompleteWithoutCommandRevert() {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
-                orderAggregator,
-                ReserveOrder.class
-        );
-        Assertions.assertEquals(ProcessStatus.REVERT_COMPLETED, response.getFinalProcessStatus());
+        TransactionResponse<OrderAggregator> response = null;
+        try {
+            response = orderAggregatorSagaTemplate.doProcess(
+                    orderAggregator,
+                    ReserveOrder.class
+            );
+        } catch (EventStoreConnectionException e) {
+            e.printStackTrace();
+        } catch (RevertException e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals(ProcessStatus.REVERT_COMPLETED, Objects.requireNonNull(response).getFinalProcessStatus());
     }
 
     @Test
@@ -108,11 +96,18 @@ class PlaceOrderControllerTest {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_error);
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
-                orderAggregator,
-                ReserveOrder.class
-        );
-        Assertions.assertEquals(ProcessStatus.REVERT_FAILED, response.getFinalProcessStatus());
+        TransactionResponse<OrderAggregator> response = null;
+        try {
+            response = orderAggregatorSagaTemplate.doProcess(
+                    orderAggregator,
+                    ReserveOrder.class
+            );
+        } catch (EventStoreConnectionException e) {
+            e.printStackTrace();
+        } catch (RevertException e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals(ProcessStatus.REVERT_FAILED, Objects.requireNonNull(response).getFinalProcessStatus());
     }
 
 

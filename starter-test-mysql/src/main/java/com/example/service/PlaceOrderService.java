@@ -10,6 +10,8 @@ import org.mono.stacksaga.TransactionResponse;
 import org.mono.stacksaga.annotation.Coordinator;
 import org.mono.stacksaga.core.annotation.AsyncListener;
 import org.mono.stacksaga.core.lsitener.AggregatorListener;
+import org.mono.stacksaga.exception.EventStoreConnectionException;
+import org.mono.stacksaga.exception.execution.RevertException;
 import org.mono.stacksaga.executor.utils.ProcessStack;
 
 @Slf4j
@@ -21,8 +23,16 @@ public class PlaceOrderService implements AggregatorListener<OrderAggregator> {
 
 
     public TransactionResponse<OrderAggregator> placeOrder(OrderAggregator orderAggregator) {
-        return orderAggregatorSagaTemplate.doProcess(orderAggregator,
-                ReserveOrder.class);
+        try {
+            return orderAggregatorSagaTemplate.doProcess(orderAggregator,
+                    ReserveOrder.class);
+        } catch (EventStoreConnectionException e) {
+            e.printStackTrace();
+            return null;
+        } catch (RevertException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @SneakyThrows
