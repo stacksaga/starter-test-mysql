@@ -132,7 +132,7 @@ class TransactionServiceImplTest {
             Assertions.assertEquals(ProcessStatus.REVERT_COMPLETED, response.getFinalProcessStatus());
         } catch (EventStoreConnectionException e) {
             e.printStackTrace();
-            OrderAggregator orderAggregatorw = (OrderAggregator) e.getFinalAggregateState();
+            OrderAggregator orderAggregatorWithOrder = (OrderAggregator) e.getFinalAggregateState();
         } catch (RevertException revertException) {
             System.out.println("revertException = " + revertException);
             revertException.printStackTrace();

@@ -16,6 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.StopWatch;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -36,7 +37,7 @@ public class ExecutorBinaryFileServiceTest {
     private StringStringTemplate stringStringTemplate;
 
     @Test
-    void saveAsFileAndSendToAdminServerTest() {
+    void saveAsFileAndSendToAdminServerTest() throws IOException {
         stringStringTemplate.getTemplate().opsForValue().set(String.format(ADMIN_SERVER_KEY_FORMATTER, "1"), "test");
         InstanceDetail instanceDetail = new InstanceDetail();
         instanceDetail.setStart_up_datetime(new Date().getTime());

@@ -11,12 +11,17 @@ import org.mono.stacksaga.cb.CircuitBreakerBroker;
 import org.mono.stacksaga.core.SagaRevertEngineInvoker;
 import org.mono.stacksaga.db.entity.RelatedServiceEntity;
 import org.mono.stacksaga.db.service.RelatedServiceService;
+import org.mono.stacksaga.mysql.config.MysqlDatabaseConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.Optional;
 
@@ -34,8 +39,30 @@ public class PlaceOrderController {
     private SagaRevertEngineInvoker sagaRevertEngineInvoker;
 
 
+    @GetMapping("/sql")
+    public ResponseEntity<?> test() {
+        try (Connection connection = MysqlDatabaseConfiguration.getConnection()) {
+            connection.setReadOnly(true);
+            connection.setAutoCommit(true);
+            PreparedStatement preparedStatement = connection.prepareStatement("select now() as test_date");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+                System.out.println("test_date 1 = " + resultSet.getString("test_date"));
+            PreparedStatement preparedStatement2 = connection.prepareStatement("select now() as test_date");
+            ResultSet resultSet2 = preparedStatement2.executeQuery();
+            resultSet2.next();
+            System.out.println("test_date 2 = " + resultSet2.getString("test_date"));
+            return ResponseEntity.ok().build();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+
     @GetMapping("/test")
     public ResponseEntity<?> placeOrder() {
+
         StopWatch stopWatch = new StopWatch();
         stopWatch.start("placeOrderProcessComplete");
         OrderAggregator orderAggregator = new OrderAggregator();
