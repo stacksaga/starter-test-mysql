@@ -59,6 +59,7 @@
             <artifactId>stack-saga-spring-boot-starter-mysql</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>
