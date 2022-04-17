@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mono.stacksaga.EnableStackSaga;
 import org.mono.stacksaga.common.comiunication.InstanceDetail;
+import org.mono.stacksaga.core.ProcessMode;
 import org.mono.stacksaga.core.service.ExecutorBinaryFileService;
 import org.mono.stacksaga.common.comiunication.ExecutorExecutionType;
 import org.mono.stacksaga.redis.publisher.ExecutorBinaryTransformerService;
@@ -49,6 +50,7 @@ public class ExecutorBinaryFileServiceTest {
                 transactionUid,
                 executorUid,
                 ExecutorExecutionType.INIT_EXECUTION,
+                ProcessMode.PROCESS,
                 SerializationUtils.serialize(instanceDetail)
         );
         Assertions.assertNotNull(file);
