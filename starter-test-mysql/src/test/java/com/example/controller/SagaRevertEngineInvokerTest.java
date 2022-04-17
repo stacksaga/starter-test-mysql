@@ -4,7 +4,6 @@ import com.example.aggregator.OrderAggregator;
 import com.example.executors.ReserveOrder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -52,7 +51,7 @@ class SagaRevertEngineInvokerTest {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_error);
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                 orderAggregator,
                 ReserveOrder.class
         );
@@ -67,7 +66,7 @@ class SagaRevertEngineInvokerTest {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_error);
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                 orderAggregator,
                 ReserveOrder.class
         );
@@ -90,7 +89,7 @@ class SagaRevertEngineInvokerTest {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_error);
-        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+        TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                 orderAggregator,
                 ReserveOrder.class
         );

@@ -1,7 +1,6 @@
 package com.example.controller;
 
 import com.example.aggregator.AddCustomerAggregator;
-import com.example.aggregator.OrderAggregator;
 import com.example.executors.ReserveOrder;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
@@ -21,7 +20,7 @@ public class CustomerAddController implements AggregatorListener<AddCustomerAggr
     @GetMapping("/test2")
     public ResponseEntity<?> placeOrder() throws EventStoreConnectionException, RevertException {
         AddCustomerAggregator addCustomerAggregator = new AddCustomerAggregator();
-        TransactionResponse<AddCustomerAggregator> response = addCustomerAggregatorSagaTemplate.doProcess(
+        TransactionResponse<AddCustomerAggregator> response = addCustomerAggregatorSagaTemplate.process(
                 addCustomerAggregator,
                 ReserveOrder.class
         );

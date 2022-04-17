@@ -44,7 +44,7 @@ class TransactionServiceImplTest {
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
         try {
-            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
                     ReserveOrder.class
             );
@@ -69,7 +69,7 @@ class TransactionServiceImplTest {
         orderAggregator.setUpdatedStatus("INIT_STEP>");
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
         try {
-            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
                     ReserveOrder.class
             );
@@ -98,7 +98,7 @@ class TransactionServiceImplTest {
         orderAggregator.setType(OrderAggregator.Type.process_complete);
         orderAggregator.setTime(new Date());
         try {
-            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
                     ReserveOrder.class
             );
@@ -123,7 +123,7 @@ class TransactionServiceImplTest {
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
         orderAggregator.setTime(new Date());
         try {
-            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.doProcess(
+            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
                     ReserveOrder.class
             );

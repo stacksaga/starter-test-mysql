@@ -24,7 +24,7 @@ public class PlaceOrderService implements AggregatorListener<OrderAggregator> {
 
     public TransactionResponse<OrderAggregator> placeOrder(OrderAggregator orderAggregator) {
         try {
-            return orderAggregatorSagaTemplate.doProcess(orderAggregator,
+            return orderAggregatorSagaTemplate.process(orderAggregator,
                     ReserveOrder.class);
         } catch (EventStoreConnectionException e) {
             e.printStackTrace();

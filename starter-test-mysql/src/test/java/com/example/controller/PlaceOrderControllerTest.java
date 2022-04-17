@@ -78,7 +78,7 @@ class PlaceOrderControllerTest {
         orderAggregator.setType(OrderAggregator.Type.revert_complete);
         TransactionResponse<OrderAggregator> response = null;
         try {
-            response = orderAggregatorSagaTemplate.doProcess(
+            response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
                     ReserveOrder.class
             );
@@ -98,7 +98,7 @@ class PlaceOrderControllerTest {
         orderAggregator.setType(OrderAggregator.Type.revert_error);
         TransactionResponse<OrderAggregator> response = null;
         try {
-            response = orderAggregatorSagaTemplate.doProcess(
+            response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
                     ReserveOrder.class
             );
