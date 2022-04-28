@@ -14,6 +14,7 @@ import org.mono.stacksaga.cb.CircuitBreakerBroker;
 import org.mono.stacksaga.core.SagaRevertEngineInvoker;
 import org.mono.stacksaga.db.entity.RelatedServiceEntity;
 import org.mono.stacksaga.db.service.RelatedServiceService;
+import org.mono.stacksaga.exception.ProcessStoppedWithGarbageException;
 import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -77,7 +78,11 @@ class SagaRevertEngineInvokerTest {
                         response.getAggregate().getAggregateTransactionId());
         transactionRevertReasonRelatedServiceUid.ifPresent(relatedServiceEntity -> {
             if (circuitBreakerBroker.updateListerServiceAvailability(relatedServiceEntity.getService_name(), true)) {
-                sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1);
+                try {
+                    sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1);
+                } catch (ProcessStoppedWithGarbageException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         Thread.sleep(5000);

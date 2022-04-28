@@ -10,8 +10,8 @@ import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
 import org.mono.stacksaga.common.comiunication.TransactionTranceResponse;
 import org.mono.stacksaga.db.service.TransactionService;
-import org.mono.stacksaga.exception.EventStoreConnectionException;
-import org.mono.stacksaga.exception.execution.RevertException;
+import org.mono.stacksaga.exception.NetworkException;
+import org.mono.stacksaga.exception.execution.UnHandledException;
 import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,6 +37,26 @@ class TransactionServiceImplTest {
 
     }
 
+    @Test
+    void getTransactionTraceTestProcessComplete() {
+        OrderAggregator orderAggregator = new OrderAggregator();
+        orderAggregator.setUpdatedStatus("INIT_STEP>");
+        orderAggregator.setType(OrderAggregator.Type.process_complete);
+        try {
+            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
+                    orderAggregator,
+                    ReserveOrder.class
+            );
+            System.out.println("response = " + response);
+
+        } catch (NetworkException e) {
+            System.out.println("e = " + e);
+            e.printStackTrace();
+        } catch (UnHandledException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
     @Test
     void getTransactionTraceTestRevertComplete() {
@@ -48,10 +68,12 @@ class TransactionServiceImplTest {
                     orderAggregator,
                     ReserveOrder.class
             );
-        } catch (EventStoreConnectionException e) {
+            System.out.println("response = " + response);
+        } catch (NetworkException e) {
+            System.out.println("e = " + e);
             e.printStackTrace();
-        } catch (RevertException e) {
-            e.printStackTrace();
+        } catch (UnHandledException e) {
+            throw new RuntimeException(e);
         }
 
         Optional<TransactionTranceResponse> transactionTrace = transactionService.getTransactionTrace(orderAggregator.getAggregateTransactionId());
@@ -60,6 +82,26 @@ class TransactionServiceImplTest {
             Assertions.fail();
         } else {
             transactionTrace.get().getExecutorOrderAsDetailsMap().forEach(System.out::println);
+        }
+    }
+
+
+    @Test
+    void invokeRevertComplete() {
+        OrderAggregator orderAggregator = new OrderAggregator();
+        orderAggregator.setUpdatedStatus("INIT_STEP>");
+        orderAggregator.setType(OrderAggregator.Type.revert_complete);
+        try {
+            TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
+                    orderAggregator,
+                    ReserveOrder.class
+            );
+        } catch (UnHandledException e) {
+            System.out.println("UnHandledException");
+            e.printStackTrace();
+        } catch (NetworkException e) {
+            System.out.println("NetworkException");
+            e.printStackTrace();
         }
     }
 
@@ -73,9 +115,11 @@ class TransactionServiceImplTest {
                     orderAggregator,
                     ReserveOrder.class
             );
-        } catch (EventStoreConnectionException e) {
+        } catch (UnHandledException e) {
+            System.out.println("UnHandledException");
             e.printStackTrace();
-        } catch (RevertException e) {
+        } catch (NetworkException e) {
+            System.out.println("NetworkException");
             e.printStackTrace();
         }
 
@@ -105,11 +149,10 @@ class TransactionServiceImplTest {
             stopWatch.stop();
             System.out.println("stopWatch " + stopWatch.getLastTaskInfo().getTimeMillis());
             Assertions.assertEquals(ProcessStatus.PROCESS_COMPLETED, response.getFinalProcessStatus());
-        } catch (EventStoreConnectionException e) {
+        } catch (UnHandledException e) {
             e.printStackTrace();
-        } catch (RevertException revertException) {
-            System.out.println("revertException = " + revertException);
-            revertException.printStackTrace();
+        } catch (NetworkException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -130,12 +173,10 @@ class TransactionServiceImplTest {
             stopWatch.stop();
             System.out.println("stopWatch " + stopWatch.getLastTaskInfo().getTimeMillis());
             Assertions.assertEquals(ProcessStatus.REVERT_COMPLETED, response.getFinalProcessStatus());
-        } catch (EventStoreConnectionException e) {
+        } catch (UnHandledException e) {
             e.printStackTrace();
-            OrderAggregator orderAggregatorWithOrder = (OrderAggregator) e.getFinalAggregateState();
-        } catch (RevertException revertException) {
-            System.out.println("revertException = " + revertException);
-            revertException.printStackTrace();
+        } catch (NetworkException e) {
+            throw new RuntimeException(e);
         }
 
     }

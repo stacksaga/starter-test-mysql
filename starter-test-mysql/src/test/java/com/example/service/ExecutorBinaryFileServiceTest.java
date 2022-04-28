@@ -39,14 +39,16 @@ public class ExecutorBinaryFileServiceTest {
 
     @Test
     void saveAsFileAndSendToAdminServerTest() throws IOException {
-        stringStringTemplate.getTemplate().opsForValue().set(String.format(ADMIN_SERVER_KEY_FORMATTER, "1"), "test");
+        /*stringStringTemplate.getTemplate().opsForValue().set(String.format(ADMIN_SERVER_KEY_FORMATTER, "1"), "test");
         InstanceDetail instanceDetail = new InstanceDetail();
         instanceDetail.setStart_up_datetime(new Date().getTime());
         String transactionUid = UUID.randomUUID().toString();
         String executorUid = UUID.randomUUID().toString();
+        String chuckUid = UUID.randomUUID().toString();
         StopWatch stopWatch = new StopWatch();
         stopWatch.start("saveAsFile");
         File file = executorFileSavingService.saveAsFile(
+                chuckUid,
                 transactionUid,
                 executorUid,
                 ExecutorExecutionType.INIT_EXECUTION,
@@ -69,7 +71,7 @@ public class ExecutorBinaryFileServiceTest {
         for (StopWatch.TaskInfo taskInfo : stopWatch.getTaskInfo()) {
             log.info("Time [ms] : {} : [{}]", taskInfo.getTimeMillis(), taskInfo.getTaskName());
         }
-        log.info("Total : {}", stopWatch.getTotalTimeMillis());
+        log.info("Total : {}", stopWatch.getTotalTimeMillis());*/
     }
 
     @Test

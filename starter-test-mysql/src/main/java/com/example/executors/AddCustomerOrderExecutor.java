@@ -18,14 +18,14 @@ public class AddCustomerOrderExecutor implements CommandExecutor<OrderAggregator
 //    private final CustomerOrderRepository customerOrderRepository;
 
     @Override
-    public ProcessStepManager doProcess(ProcessStack<OrderAggregator> processStack, OrderAggregator aggregate) {
+    public ProcessStepManager doProcess(ProcessStack<OrderAggregator> processStack, OrderAggregator aggregate) throws Exception {
         System.out.println("AddCustomerOrderExecutor.doProcess");
         aggregate.setUpdatedStatus(aggregate.getUpdatedStatus() + "AddCustomerOrderExecutor>");
         aggregate.setTime(new Date());
         if (aggregate.getType().equals(OrderAggregator.Type.process_complete)) {
             return ProcessStepManager.compete();
         } else {
-            return ProcessStepManager.revert(ExecutorException.buildProcessException(new RuntimeException("error from AddCustomerOrderExecutor")));
+            throw new RuntimeException("error from AddCustomerOrderExecutor");
         }
     }
 

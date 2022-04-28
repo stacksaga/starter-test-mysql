@@ -3,13 +3,12 @@ package com.example;
 import org.mono.stacksaga.EnableStackSaga;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(exclude = {
-//        LiquibaseAutoConfiguration.class
-})
+@SpringBootApplication
 @EnableStackSaga
 @EntityScan({
         "com.example.ms.userservice.entity",

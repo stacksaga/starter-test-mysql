@@ -6,7 +6,9 @@ import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
 import org.mono.stacksaga.core.lsitener.AggregatorListener;
 import org.mono.stacksaga.exception.EventStoreConnectionException;
+import org.mono.stacksaga.exception.NetworkException;
 import org.mono.stacksaga.exception.execution.RevertException;
+import org.mono.stacksaga.exception.execution.UnHandledException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +20,7 @@ public class CustomerAddController implements AggregatorListener<AddCustomerAggr
     private SagaTemplate<AddCustomerAggregator> addCustomerAggregatorSagaTemplate;
 
     @GetMapping("/test2")
-    public ResponseEntity<?> placeOrder() throws EventStoreConnectionException, RevertException {
+    public ResponseEntity<?> placeOrder() throws EventStoreConnectionException, RevertException, UnHandledException, NetworkException {
         AddCustomerAggregator addCustomerAggregator = new AddCustomerAggregator();
         TransactionResponse<AddCustomerAggregator> response = addCustomerAggregatorSagaTemplate.process(
                 addCustomerAggregator,

@@ -5,13 +5,17 @@ import com.example.executors.ReserveOrder;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.mono.stacksaga.RevertHintStore;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
 import org.mono.stacksaga.annotation.Coordinator;
 import org.mono.stacksaga.core.annotation.AsyncListener;
 import org.mono.stacksaga.core.lsitener.AggregatorListener;
 import org.mono.stacksaga.exception.EventStoreConnectionException;
+import org.mono.stacksaga.exception.NetworkException;
+import org.mono.stacksaga.exception.execution.ExecutorException;
 import org.mono.stacksaga.exception.execution.RevertException;
+import org.mono.stacksaga.exception.execution.UnHandledException;
 import org.mono.stacksaga.executor.utils.ProcessStack;
 
 @Slf4j
@@ -26,12 +30,12 @@ public class PlaceOrderService implements AggregatorListener<OrderAggregator> {
         try {
             return orderAggregatorSagaTemplate.process(orderAggregator,
                     ReserveOrder.class);
-        } catch (EventStoreConnectionException e) {
+        } catch (UnHandledException e) {
+            System.out.println("UnHandledException");
             e.printStackTrace();
             return null;
-        } catch (RevertException e) {
-            e.printStackTrace();
-            return null;
+        } catch (NetworkException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -44,14 +48,20 @@ public class PlaceOrderService implements AggregatorListener<OrderAggregator> {
 
     @Override
     @AsyncListener
-    public void onTransactionRevertSuccess(TransactionResponse<OrderAggregator> response) {
-        System.out.println("PlaceOrderService.onTransactionRevertSuccess");
+    public void onEachRevertPerformed(ProcessStack<OrderAggregator> previousProcessStack, ExecutorException executorException, RevertHintStore revertHintStore) throws RevertException {
+
+        System.out.println("PlaceOrderService.onEachRevertPerformed");
     }
 
     @Override
     @AsyncListener
-    public void onTransactionRevertFailed(TransactionResponse<OrderAggregator> response) {
-        log.info("PlaceOrderService.onTransactionRevertFailed");
+    public void onTransactionCompleted(TransactionResponse<OrderAggregator> response) {
+        System.out.println("PlaceOrderService.onTransactionCompleted");
+    }
 
+    @Override
+    @AsyncListener
+    public void onTransactionTerminated(UnHandledException unHandledException) {
+        System.out.println("PlaceOrderService.onTransactionTerminated");
     }
 }

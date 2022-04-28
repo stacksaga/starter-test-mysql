@@ -10,6 +10,7 @@ import org.mono.stacksaga.annotation.Executor;
 import org.mono.stacksaga.annotation.RevertAfter;
 import org.mono.stacksaga.annotation.RevertBefore;
 import org.mono.stacksaga.annotation.RevertExecutorConfig;
+import org.mono.stacksaga.exception.NetworkException;
 import org.mono.stacksaga.exception.execution.ExecutorException;
 import org.mono.stacksaga.executor.CommandExecutor;
 import org.mono.stacksaga.executor.utils.ProcessStack;
@@ -35,11 +36,10 @@ public class MakeThePaymentExecutor implements CommandExecutor<OrderAggregator> 
     @RevertBefore(executors = {
             @RevertExecutorConfig(order = 1, revertExecutor = MakePaymentLogUpdate.class)
     })
-    @RevertAfter(executors = {
+/*    @RevertAfter(executors = {
             @RevertExecutorConfig(order = 1, revertExecutor = MakePaymentLogUpdate.class)
-    })
-
-    public void doRevert(ProcessStack<OrderAggregator> previousProcessStack, ExecutorException executorException, OrderAggregator currentAggregate, RevertHintStore revertHintStore) throws IOException {
+    })*/
+    public void doRevert(ProcessStack<OrderAggregator> previousProcessStack, ExecutorException executorException, OrderAggregator currentAggregate, RevertHintStore revertHintStore) throws NetworkException {
         System.out.println("MakeThePaymentExecutor.doRevert");
         revertHintStore.put("MakeThePaymentExecutor", new Date());
 /*        if (currentAggregate.getType().equals(OrderAggregator.Type.revert_error)) {

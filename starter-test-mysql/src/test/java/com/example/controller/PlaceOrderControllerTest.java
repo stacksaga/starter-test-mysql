@@ -14,8 +14,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mono.stacksaga.SagaTemplate;
 import org.mono.stacksaga.TransactionResponse;
-import org.mono.stacksaga.exception.EventStoreConnectionException;
-import org.mono.stacksaga.exception.execution.RevertException;
+import org.mono.stacksaga.exception.NetworkException;
+import org.mono.stacksaga.exception.execution.UnHandledException;
 import org.mono.stacksaga.executor.utils.ProcessStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -82,10 +82,10 @@ class PlaceOrderControllerTest {
                     orderAggregator,
                     ReserveOrder.class
             );
-        } catch (EventStoreConnectionException e) {
+        } catch (UnHandledException e) {
             e.printStackTrace();
-        } catch (RevertException e) {
-            e.printStackTrace();
+        } catch (NetworkException e) {
+            throw new RuntimeException(e);
         }
         Assertions.assertEquals(ProcessStatus.REVERT_COMPLETED, Objects.requireNonNull(response).getFinalProcessStatus());
     }
@@ -102,10 +102,10 @@ class PlaceOrderControllerTest {
                     orderAggregator,
                     ReserveOrder.class
             );
-        } catch (EventStoreConnectionException e) {
+        } catch (UnHandledException e) {
             e.printStackTrace();
-        } catch (RevertException e) {
-            e.printStackTrace();
+        } catch (NetworkException e) {
+            throw new RuntimeException(e);
         }
         Assertions.assertEquals(ProcessStatus.REVERT_FAILED, Objects.requireNonNull(response).getFinalProcessStatus());
     }
