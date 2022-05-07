@@ -18,6 +18,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.sql.SQLException;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ConnectionFailureTest {
@@ -38,7 +39,7 @@ public class ConnectionFailureTest {
     void invoke() {
         OrderAggregator orderAggregator = new OrderAggregator();
         orderAggregator.setUpdatedStatus("INIT_STEP>");
-        orderAggregator.setType(OrderAggregator.Type.process_complete);
+        orderAggregator.setType(OrderAggregator.Type.revert_complete);
         try {
             TransactionResponse<OrderAggregator> response = orderAggregatorSagaTemplate.process(
                     orderAggregator,
@@ -59,8 +60,8 @@ public class ConnectionFailureTest {
                     if (invokerServiceMysql.invoke(binaryTransformerEntity)) {
                         executorBinaryFileService.deleteFile(binaryTransformerEntity);
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                } catch (IOException | SQLException e) {
+                    e.printStackTrace();
                 }
             });
         }

@@ -19,11 +19,12 @@ import static org.mono.stacksaga.common.Resources.Testing.DO_PROCESS_COUNT;
 public class ReserveOrder implements CommandExecutor<OrderAggregator> {
 
     @Override
-    public ProcessStepManager doProcess(ProcessStack<OrderAggregator> previousProcessStack, OrderAggregator currentAggregate) {
+    public ProcessStepManager doProcess(ProcessStack<OrderAggregator> previousProcessStack, OrderAggregator currentAggregate) throws Exception {
         DO_PROCESS_COUNT.incrementAndGet();
         currentAggregate.setUpdatedStatus(currentAggregate.getUpdatedStatus() + "ReserveOrder>");
         currentAggregate.setTime(new Date());
         return ProcessStepManager.next(CheckUserExecutor.class);
+//        throw new RuntimeException("ReserveOrder UNEXPECTED RuntimeException exception");
     }
 
     @Override
