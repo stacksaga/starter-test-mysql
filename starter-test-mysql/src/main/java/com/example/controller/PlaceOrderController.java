@@ -25,6 +25,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @Slf4j
@@ -79,11 +80,8 @@ public class PlaceOrderController {
                         response.getAggregate().getAggregateTransactionId());
         transactionRevertReasonRelatedServiceUid.ifPresent(relatedServiceEntity -> {
             if (circuitBreakerBroker.updateListerServiceAvailability(relatedServiceEntity.getService_name(), true)) {
-                try {
-                    sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1);
-                } catch (ProcessStoppedWithGarbageException e) {
-                    throw new RuntimeException(e);
-                }
+                String retryFootnote= UUID.randomUUID().toString();
+                sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1,retryFootnote);
             }
         });
         return ResponseEntity.ok(response);

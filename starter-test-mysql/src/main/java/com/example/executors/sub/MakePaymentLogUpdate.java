@@ -18,7 +18,6 @@ public class MakePaymentLogUpdate implements RevertExecutor<OrderAggregator> {
     public void doProcess(ProcessStack<OrderAggregator> previousProcessStack, Exception processException, RevertHintStore revertHintStore) throws NetworkException {
         System.out.println("MakePaymentLogUpdate.doProcess");
         revertHintStore.put("MakePaymentLogUpdate", new Date());
-
-//        throw new NetworkException("test", new Exception());
+//        throw new NetworkException(new Exception("fuckign execprion happes skdjsh kjd "));
     }
 }

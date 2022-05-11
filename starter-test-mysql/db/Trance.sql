@@ -2,7 +2,6 @@ SELECT es_transaction_execution.transaction_execution_uid                       
        es_transaction_execution.executor_type                                   AS transaction_execution_executor_type,
        es_transaction_execution.execution_mode                                  AS execution_mode,
        es_transaction_execution.final_status                                    AS final_status,
-       es_transaction_execution.flat_order                                      AS flat_order,
        es_transaction_execution.has_errors                                      AS has_errors,
        es_executor.executor_class                                               AS executor_class,
        es_executor.executor_type                                                AS executor_type,
@@ -17,7 +16,8 @@ SELECT es_transaction_execution.transaction_execution_uid                       
        es_transaction_revert_sub_execution.transaction_revert_sub_execution_uid as transaction_revert_sub_execution_uid,
        try_outs.tryout_count,
        parent_transaction_revert_execution.transaction_revert_execution_uid,
-       parent_execuor.executor_class
+       parent_execuor.executor_class,
+       es_transaction.process_mode                                              as process_mode
 FROM es_transaction_execution
          INNER JOIN es_transaction ON es_transaction_execution.transaction_uid = es_transaction.transaction_uid
          INNER JOIN es_executor_aggregator_version ON es_transaction_execution.executor_aggregator_version_uid =
@@ -33,17 +33,15 @@ FROM es_transaction_execution
          LEFT JOIN es_transaction_execution_tryout ON es_transaction_execution.transaction_execution_uid =
                                                       es_transaction_execution_tryout.transaction_execution_uid
          INNER JOIN
-     (
-         SELECT MAX(es_transaction_execution_tryout.start_datetime)                     AS start_datetime,
-                es_transaction_execution.transaction_execution_uid,
-                COUNT(es_transaction_execution_tryout.transaction_execution_tryout_uid) AS tryout_count
-         FROM es_transaction_execution_tryout
-                  INNER JOIN es_transaction_execution ON es_transaction_execution_tryout.transaction_execution_uid =
-                                                         es_transaction_execution.transaction_execution_uid
-                  INNER JOIN es_transaction ON es_transaction_execution.transaction_uid = es_transaction.transaction_uid
-         WHERE es_transaction.revert_access_token = '25aefdb2-1b88-4629-aa08-b603c5ed25b2'
-         GROUP BY es_transaction_execution.transaction_execution_uid
-     )
+     (SELECT MAX(es_transaction_execution_tryout.start_datetime)                     AS start_datetime,
+             es_transaction_execution.transaction_execution_uid,
+             COUNT(es_transaction_execution_tryout.transaction_execution_tryout_uid) AS tryout_count
+      FROM es_transaction_execution_tryout
+               INNER JOIN es_transaction_execution ON es_transaction_execution_tryout.transaction_execution_uid =
+                                                      es_transaction_execution.transaction_execution_uid
+               INNER JOIN es_transaction ON es_transaction_execution.transaction_uid = es_transaction.transaction_uid
+      WHERE es_transaction.transaction_uid = '14904e49-c799-4a66-b27d-8ee39e0c24ef'
+      GROUP BY es_transaction_execution.transaction_execution_uid)
          AS try_outs ON es_transaction_execution_tryout.start_datetime = try_outs.start_datetime
          AND es_transaction_execution_tryout.transaction_execution_uid = try_outs.transaction_execution_uid
 
@@ -61,6 +59,5 @@ FROM es_transaction_execution
                       parent_executor_aggregator_version.executor_aggregator_version_uid
          LEFT JOIN es_executor AS parent_execuor
                    ON parent_executor_aggregator_version.executor_uid = parent_execuor.executor_uid
-WHERE es_transaction.revert_access_token = '25aefdb2-1b88-4629-aa08-b603c5ed25b2'
-ORDER BY es_transaction_process_execution.core_order IS NULL ASC,
-         es_transaction_process_execution.core_order ASC
+WHERE es_transaction.transaction_uid = '14904e49-c799-4a66-b27d-8ee39e0c24ef'
+ORDER BY es_transaction_execution_tryout.start_datetime ASC

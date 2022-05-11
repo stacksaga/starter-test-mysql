@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class SagaRevertEngineInvokerTest {
@@ -76,13 +77,11 @@ class SagaRevertEngineInvokerTest {
         Optional<RelatedServiceEntity> transactionRevertReasonRelatedServiceUid =
                 relatedServiceService.getTransactionRevertReasonRelatedServiceUid(
                         response.getAggregate().getAggregateTransactionId());
+
         transactionRevertReasonRelatedServiceUid.ifPresent(relatedServiceEntity -> {
             if (circuitBreakerBroker.updateListerServiceAvailability(relatedServiceEntity.getService_name(), true)) {
-                try {
-                    sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1);
-                } catch (ProcessStoppedWithGarbageException e) {
-                    throw new RuntimeException(e);
-                }
+                String retryFootnote = UUID.randomUUID().toString();
+                sagaRevertEngineInvoker.invokeRevertEngine(relatedServiceEntity.getService_name(), 1, retryFootnote);
             }
         });
         Thread.sleep(5000);
@@ -105,18 +104,19 @@ class SagaRevertEngineInvokerTest {
 
         if (transactionRevertReasonRelatedServiceUid.isPresent()) {
             if (circuitBreakerBroker.updateListerServiceAvailability(transactionRevertReasonRelatedServiceUid.get().getService_name(), true)) {
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1);
+                String retryFootnote = UUID.randomUUID().toString();
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1, retryFootnote);
                 Thread.sleep(2_000);
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 0);
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1);
-                Thread.sleep(2_000);
-
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 0);
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1);
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 0, retryFootnote);
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1, retryFootnote);
                 Thread.sleep(2_000);
 
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 0);
-                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1);
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 0, retryFootnote);
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1, retryFootnote);
+                Thread.sleep(2_000);
+
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 0, retryFootnote);
+                sagaRevertEngineInvoker.invokeRevertEngine(transactionRevertReasonRelatedServiceUid.get().getService_name(), 1, retryFootnote);
                 Thread.sleep(2_000);
             }
         }
@@ -130,7 +130,8 @@ class SagaRevertEngineInvokerTest {
 
         String relatedService = "wallet-service";
         if (circuitBreakerBroker.updateListerServiceAvailability(relatedService, true)) {
-            sagaRevertEngineInvoker.invokeRevertEngine(relatedService, 1);
+            String retryFootnote = UUID.randomUUID().toString();
+            sagaRevertEngineInvoker.invokeRevertEngine(relatedService, 1, retryFootnote);
         }
         Thread.sleep(5000);
     }
@@ -141,7 +142,8 @@ class SagaRevertEngineInvokerTest {
 
         String relatedService = "stock-service";
         if (circuitBreakerBroker.updateListerServiceAvailability(relatedService, true)) {
-            sagaRevertEngineInvoker.invokeRevertEngine(relatedService, 1);
+            String retryFootnote = UUID.randomUUID().toString();
+            sagaRevertEngineInvoker.invokeRevertEngine(relatedService, 1, retryFootnote);
         }
         Thread.sleep(5000);
     }
