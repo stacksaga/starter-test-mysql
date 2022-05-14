@@ -10,11 +10,13 @@ import org.mono.stacksaga.annotation.Executor;
 import org.mono.stacksaga.annotation.RevertAfter;
 import org.mono.stacksaga.annotation.RevertBefore;
 import org.mono.stacksaga.annotation.RevertExecutorConfig;
+import org.mono.stacksaga.common.Resources;
 import org.mono.stacksaga.exception.NetworkException;
 import org.mono.stacksaga.exception.execution.ExecutorException;
 import org.mono.stacksaga.executor.CommandExecutor;
 import org.mono.stacksaga.executor.utils.ProcessStack;
 import org.mono.stacksaga.executor.utils.ProcessStepManager;
+import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 import java.util.Date;
@@ -25,11 +27,15 @@ public class MakeThePaymentExecutor implements CommandExecutor<OrderAggregator> 
     private final CustomerWalletRepository customerWalletRepository;
 
     @Override
-    public ProcessStepManager doProcess(ProcessStack<OrderAggregator> previousProcessStack, OrderAggregator currentAggregate) {
+    public ProcessStepManager doProcess(ProcessStack<OrderAggregator> previousProcessStack, OrderAggregator currentAggregate) throws Exception {
         System.out.println("MakeThePaymentExecutor.doProcess");
         currentAggregate.setUpdatedStatus(currentAggregate.getUpdatedStatus() + "MakeThePaymentExecutor>");
         currentAggregate.setTime(new Date());
-        return ProcessStepManager.next(AddCustomerOrderExecutor.class);
+        if (Resources.Testing.VAL.get() == 1) {
+            throw new NetworkException(new RuntimeException("network failed[1]"));
+        } else {
+            return ProcessStepManager.next(AddCustomerOrderExecutor.class);
+        }
     }
 
     @Override

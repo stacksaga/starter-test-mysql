@@ -11,8 +11,6 @@ import org.mono.stacksaga.executor.utils.ProcessStepManager;
 
 import java.util.Date;
 
-import static org.mono.stacksaga.common.Resources.Testing.DO_PROCESS_COUNT;
-
 @AllArgsConstructor
 @Executor(executeFor = MyMicroServices.ORDER_SERVICE)
 public class CheckUserExecutor implements QueryExecutor<OrderAggregator> {
@@ -21,7 +19,6 @@ public class CheckUserExecutor implements QueryExecutor<OrderAggregator> {
 
     @Override
     public ProcessStepManager doProcess(ProcessStack<OrderAggregator> processStack, OrderAggregator aggregate) {
-        DO_PROCESS_COUNT.incrementAndGet();
         System.out.println("CheckUserExecutor.doProcess");
 
         aggregate.setUpdatedStatus(aggregate.getUpdatedStatus() + "CheckUserExecutor>");

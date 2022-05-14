@@ -13,14 +13,11 @@ import org.mono.stacksaga.executor.utils.ProcessStepManager;
 import java.io.IOException;
 import java.util.Date;
 
-import static org.mono.stacksaga.common.Resources.Testing.DO_PROCESS_COUNT;
-
 @Executor(executeFor = MyMicroServices.STOCK_SERVICE)
 public class ReserveOrder implements CommandExecutor<OrderAggregator> {
 
     @Override
     public ProcessStepManager doProcess(ProcessStack<OrderAggregator> previousProcessStack, OrderAggregator currentAggregate) throws Exception {
-        DO_PROCESS_COUNT.incrementAndGet();
         currentAggregate.setUpdatedStatus(currentAggregate.getUpdatedStatus() + "ReserveOrder>");
         currentAggregate.setTime(new Date());
         return ProcessStepManager.next(CheckUserExecutor.class);
