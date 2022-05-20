@@ -11,19 +11,11 @@ import org.mono.stacksaga.executor.utils.ProcessStack;
 import java.util.Date;
 
 @Executor(executeFor = MyMicroServices.LOG_SERVICE)
-public class MakePaymentLogUpdate implements RevertExecutor<OrderAggregator> {
-
-
+public class MakePaymentLogUpdateAfter implements RevertExecutor<OrderAggregator> {
     @Override
     public void doProcess(ProcessStack<OrderAggregator> previousProcessStack, Exception processException, RevertHintStore revertHintStore) throws NetworkException {
-        System.out.println("MakePaymentLogUpdate.doProcess");
-        revertHintStore.put("MakePaymentLogUpdate", new Date());
-        try {
-            Thread.sleep(5);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        System.out.println("MakePaymentLogUpdateAfter.doProcess");
+        revertHintStore.put("MakePaymentLogUpdateAfter", new Date());
 
-//        throw new NetworkException(new Exception("fuckign execprion happes skdjsh kjd "));
     }
 }

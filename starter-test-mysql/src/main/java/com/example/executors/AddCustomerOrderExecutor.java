@@ -23,6 +23,8 @@ public class AddCustomerOrderExecutor implements CommandExecutor<OrderAggregator
         System.out.println("AddCustomerOrderExecutor.doProcess");
         aggregate.setUpdatedStatus(aggregate.getUpdatedStatus() + "AddCustomerOrderExecutor>");
         aggregate.setTime(new Date());
+        Thread.sleep(50);
+
         if (aggregate.getType().equals(OrderAggregator.Type.process_complete)) {
             return ProcessStepManager.compete();
         } else {

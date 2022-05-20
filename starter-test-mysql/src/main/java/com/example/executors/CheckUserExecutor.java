@@ -20,6 +20,11 @@ public class CheckUserExecutor implements QueryExecutor<OrderAggregator> {
     @Override
     public ProcessStepManager doProcess(ProcessStack<OrderAggregator> processStack, OrderAggregator aggregate) {
         System.out.println("CheckUserExecutor.doProcess");
+        try {
+            Thread.sleep(4);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         aggregate.setUpdatedStatus(aggregate.getUpdatedStatus() + "CheckUserExecutor>");
         aggregate.setTime(new Date());

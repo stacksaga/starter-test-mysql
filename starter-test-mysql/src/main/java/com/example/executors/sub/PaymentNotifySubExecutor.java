@@ -8,22 +8,11 @@ import org.mono.stacksaga.exception.NetworkException;
 import org.mono.stacksaga.executor.RevertExecutor;
 import org.mono.stacksaga.executor.utils.ProcessStack;
 
-import java.util.Date;
-
 @Executor(executeFor = MyMicroServices.LOG_SERVICE)
-public class MakePaymentLogUpdate implements RevertExecutor<OrderAggregator> {
-
-
+// TODO: 5/18/2022 check wha to do for coming error when there is a revert executor and it has not annotated as a sub executor.
+public class PaymentNotifySubExecutor implements RevertExecutor<OrderAggregator> {
     @Override
     public void doProcess(ProcessStack<OrderAggregator> previousProcessStack, Exception processException, RevertHintStore revertHintStore) throws NetworkException {
-        System.out.println("MakePaymentLogUpdate.doProcess");
-        revertHintStore.put("MakePaymentLogUpdate", new Date());
-        try {
-            Thread.sleep(5);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
-//        throw new NetworkException(new Exception("fuckign execprion happes skdjsh kjd "));
     }
 }

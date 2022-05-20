@@ -16,7 +16,7 @@ import java.util.Date;
 @Data
 @ToString
 @Slf4j
-@Aggregator(version = "1.0.3", mapper = OrderAggregator.Mapper.class, versionUpdateNote = "just for fun")
+@Aggregator(version = "1.0.6", description = "aggregator test description", mapper = OrderAggregator.Mapper.class, versionUpdateNote = "order aggregator update note for 1.0.5")
 public class OrderAggregator extends SagaAggregate {
     private String updatedStatus;
     private Date time;

@@ -21,6 +21,8 @@ public class CheckAmountForPayment implements QueryExecutor<OrderAggregator> {
         System.out.println("CheckAmountForPayment.doProcess");
         aggregate.setUpdatedStatus(aggregate.getUpdatedStatus() + "CheckAmountForPayment>");
         aggregate.setTime(new Date());
+        Thread.sleep(2);
+
         return ProcessStepManager.next(MakeThePaymentExecutor.class);
 
     }

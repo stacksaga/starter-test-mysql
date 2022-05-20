@@ -3,6 +3,8 @@ package com.example.executors;
 import com.example.MyMicroServices;
 import com.example.aggregator.OrderAggregator;
 import com.example.executors.sub.MakePaymentLogUpdate;
+import com.example.executors.sub.MakePaymentLogUpdateAfter;
+import com.example.executors.sub.PaymentNotifySubExecutor;
 import com.example.ms.customerwalletservice.repository.CustomerWalletRepository;
 import lombok.AllArgsConstructor;
 import org.mono.stacksaga.RevertHintStore;
@@ -31,23 +33,32 @@ public class MakeThePaymentExecutor implements CommandExecutor<OrderAggregator> 
         System.out.println("MakeThePaymentExecutor.doProcess");
         currentAggregate.setUpdatedStatus(currentAggregate.getUpdatedStatus() + "MakeThePaymentExecutor>");
         currentAggregate.setTime(new Date());
-        if (Resources.Testing.VAL.get() == 1) {
+        Thread.sleep(5);
+        return ProcessStepManager.next(AddCustomerOrderExecutor.class);
+/*        if (Resources.Testing.VAL.get() == 1) {
             throw new NetworkException(new RuntimeException("network failed[1]"));
         } else {
             return ProcessStepManager.next(AddCustomerOrderExecutor.class);
-        }
+        }*/
     }
 
     @Override
     @RevertBefore(executors = {
-            @RevertExecutorConfig(order = 1, revertExecutor = MakePaymentLogUpdate.class)
+            @RevertExecutorConfig(order = 1, revertExecutor = MakePaymentLogUpdate.class),
+            @RevertExecutorConfig(order = 2, revertExecutor = PaymentNotifySubExecutor.class),
     })
-/*    @RevertAfter(executors = {
-            @RevertExecutorConfig(order = 1, revertExecutor = MakePaymentLogUpdate.class)
-    })*/
+    @RevertAfter(executors = {
+            @RevertExecutorConfig(order = 1, revertExecutor = MakePaymentLogUpdateAfter.class)
+    })
     public void doRevert(ProcessStack<OrderAggregator> previousProcessStack, ExecutorException executorException, OrderAggregator currentAggregate, RevertHintStore revertHintStore) throws NetworkException {
         System.out.println("MakeThePaymentExecutor.doRevert");
         revertHintStore.put("MakeThePaymentExecutor", new Date());
+        try {
+            Thread.sleep(9);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
 //        throw new NetworkException(new RuntimeException(" other error from MakePaymentLogUpdate:doRevert"));
 
 /*        if (currentAggregate.getType().equals(OrderAggregator.Type.revert_error)) {
