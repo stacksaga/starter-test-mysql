@@ -22,8 +22,8 @@ public class ReserveOrder implements CommandExecutor<OrderAggregator> {
         currentAggregate.setUpdatedStatus(currentAggregate.getUpdatedStatus() + "ReserveOrder>");
         currentAggregate.setTime(new Date());
         Thread.sleep(5);
-        return ProcessStepManager.next(CheckUserExecutor.class);
-//        throw new RuntimeException("ReserveOrder UNEXPECTED RuntimeException exception");
+//        return ProcessStepManager.next(CheckUserExecutor.class);
+        throw new RuntimeException("ReserveOrder UNEXPECTED RuntimeException exception");
     }
 
     @Override

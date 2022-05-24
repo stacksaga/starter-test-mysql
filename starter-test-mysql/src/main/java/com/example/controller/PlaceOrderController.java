@@ -59,6 +59,9 @@ public class PlaceOrderController {
     @Autowired
     private InvokableChuckExecutionInvokerServiceMysqlImpl invokerServiceMysql;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @GetMapping("/test")
     public ResponseEntity<?> placeOrder() {
 
@@ -82,7 +85,7 @@ public class PlaceOrderController {
             executorBinaryFileService.getFiles().forEach(file -> {
                 try {
                     byte[] fileData = executorBinaryFileService.getFileAsByteArray(file);
-                    BinaryTransformerEntity binaryTransformerEntity = SerializationUtils.deserialize(fileData);
+                    BinaryTransformerEntity binaryTransformerEntity = objectMapper.readValue(fileData, BinaryTransformerEntity.class);
                     if (invokerServiceMysql.invoke(binaryTransformerEntity)) {
                         executorBinaryFileService.deleteFile(binaryTransformerEntity);
                     }
